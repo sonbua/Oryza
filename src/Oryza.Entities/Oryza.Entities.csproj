@@ -39,7 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category.cs" />
+    <Compile Include="Entry.cs" />
+    <Compile Include="EntryType.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="IModule.cs" />
+    <Compile Include="IModuleManager.cs" />
+    <Compile Include="Metadata.cs" />
+    <Compile Include="ModuleStatuses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Snapshot.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
