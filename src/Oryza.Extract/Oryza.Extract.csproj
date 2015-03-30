@@ -35,7 +35,18 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extractor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Oryza.Entities\Oryza.Entities.csproj">
+      <Project>{68f4d43b-3340-42f6-bf04-8060e7909567}</Project>
+      <Name>Oryza.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Oryza.ServiceInterfaces\Oryza.ServiceInterfaces.csproj">
+      <Project>{2f61dd3e-8e07-47ac-9fd2-f86745969695}</Project>
+      <Name>Oryza.ServiceInterfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

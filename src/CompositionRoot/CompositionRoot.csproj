@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2B269846-CDD3-4719-A2F9-5323BC4747E4}</ProjectGuid>
+    <ProjectGuid>{3DECC30B-6D00-41D8-BFBB-DC9CD7562356}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Oryza.ServiceDispatcher</RootNamespace>
-    <AssemblyName>Oryza.ServiceDispatcher</AssemblyName>
+    <RootNamespace>CompositionRoot</RootNamespace>
+    <AssemblyName>CompositionRoot</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,36 +30,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SimpleInjector">
-      <HintPath>..\packages\SimpleInjector.2.7.3\lib\net45\SimpleInjector.dll</HintPath>
-    </Reference>
-    <Reference Include="SimpleInjector.Diagnostics">
-      <HintPath>..\packages\SimpleInjector.2.7.3\lib\net45\SimpleInjector.Diagnostics.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Oryza.Composition\Oryza.Composition.csproj">
-      <Project>{f42a21f7-6232-4d18-8619-596f820a2cb4}</Project>
-      <Name>Oryza.Composition</Name>
+    <ProjectReference Include="..\Oryza.Configuration\Oryza.Configuration.csproj">
+      <Project>{3f7885a9-c554-4509-ac0f-cbf8cb2606da}</Project>
+      <Name>Oryza.Configuration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Oryza.Entities\Oryza.Entities.csproj">
-      <Project>{68f4d43b-3340-42f6-bf04-8060e7909567}</Project>
-      <Name>Oryza.Entities</Name>
+    <ProjectReference Include="..\Oryza.Download\Oryza.Download.csproj">
+      <Project>{719e01a3-319c-4943-b3c5-029bc2a5f26d}</Project>
+      <Name>Oryza.Download</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Oryza.Extract\Oryza.Extract.csproj">
+      <Project>{28252316-cd75-496c-ac25-793aa4d822d7}</Project>
+      <Name>Oryza.Extract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Oryza.Parsing\Oryza.Parsing.csproj">
+      <Project>{638e79d8-a943-4f3f-9787-6dd782e006d3}</Project>
+      <Name>Oryza.Parsing</Name>
     </ProjectReference>
     <ProjectReference Include="..\Oryza.ServiceInterfaces\Oryza.ServiceInterfaces.csproj">
       <Project>{2f61dd3e-8e07-47ac-9fd2-f86745969695}</Project>
       <Name>Oryza.ServiceInterfaces</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

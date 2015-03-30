@@ -6,23 +6,23 @@ namespace Oryza.Entities
     {
         public Metadata(DateTime createdAt, DateTime lastModifiedAt)
         {
-            this.createdAt = createdAt;
-            this.lastModifiedAt = lastModifiedAt;
+            _createdAt = createdAt;
+            _lastModifiedAt = lastModifiedAt;
         }
 
         public DateTime CreatedAt
         {
-            get { return createdAt; }
-            set { createdAt = value; }
+            get { return _createdAt; }
+            set { _createdAt = value; }
         }
 
         public DateTime LastModifiedAt
         {
-            get { return lastModifiedAt; }
-            set { lastModifiedAt = value; }
+            get { return _lastModifiedAt; }
+            set { _lastModifiedAt = value; }
         }
 
-        private DateTime createdAt;
-        private DateTime lastModifiedAt;
+        private DateTime _createdAt;
+        private DateTime _lastModifiedAt;
     }
 }

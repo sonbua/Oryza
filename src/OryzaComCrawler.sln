@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.Entities", "Oryza.Entities\Oryza.Entities.csproj", "{68F4D43B-3340-42F6-BF04-8060E7909567}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.Extract", "Oryza.Extract\Oryza.Extract.csproj", "{28252316-CD75-496C-AC25-793AA4D822D7}"
@@ -8,6 +10,18 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.Parsing", "Oryza.Parsing\Oryza.Parsing.csproj", "{638E79D8-A943-4F3F-9787-6DD782E006D3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.ServiceDispatcher", "Oryza.ServiceDispatcher\Oryza.ServiceDispatcher.csproj", "{2B269846-CDD3-4719-A2F9-5323BC4747E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.Capture", "Oryza.Capture\Oryza.Capture.csproj", "{719E01A3-319C-4943-B3C5-029BC2A5F26D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.ServiceInterfaces", "Oryza.ServiceInterfaces\Oryza.ServiceInterfaces.csproj", "{2F61DD3E-8E07-47AC-9FD2-F86745969695}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.Configuration", "Oryza.Configuration\Oryza.Configuration.csproj", "{3F7885A9-C554-4509-AC0F-CBF8CB2606DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.Composition", "Oryza.Composition\Oryza.Composition.csproj", "{F42A21F7-6232-4D18-8619-596F820A2CB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.Capture.Tests", "Oryza.Capture.Tests\Oryza.Capture.Tests.csproj", "{5F66119F-5F8D-4E2E-8A8E-98126533806E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.TestBase", "Oryza.TestBase\Oryza.TestBase.csproj", "{9171EE92-456E-499E-9818-4AD038899C08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +45,30 @@ Global
 		{2B269846-CDD3-4719-A2F9-5323BC4747E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B269846-CDD3-4719-A2F9-5323BC4747E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B269846-CDD3-4719-A2F9-5323BC4747E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{719E01A3-319C-4943-B3C5-029BC2A5F26D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{719E01A3-319C-4943-B3C5-029BC2A5F26D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{719E01A3-319C-4943-B3C5-029BC2A5F26D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{719E01A3-319C-4943-B3C5-029BC2A5F26D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F61DD3E-8E07-47AC-9FD2-F86745969695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F61DD3E-8E07-47AC-9FD2-F86745969695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F61DD3E-8E07-47AC-9FD2-F86745969695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F61DD3E-8E07-47AC-9FD2-F86745969695}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F7885A9-C554-4509-AC0F-CBF8CB2606DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F7885A9-C554-4509-AC0F-CBF8CB2606DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F7885A9-C554-4509-AC0F-CBF8CB2606DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F7885A9-C554-4509-AC0F-CBF8CB2606DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F42A21F7-6232-4D18-8619-596F820A2CB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F42A21F7-6232-4D18-8619-596F820A2CB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F42A21F7-6232-4D18-8619-596F820A2CB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F42A21F7-6232-4D18-8619-596F820A2CB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F66119F-5F8D-4E2E-8A8E-98126533806E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F66119F-5F8D-4E2E-8A8E-98126533806E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F66119F-5F8D-4E2E-8A8E-98126533806E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F66119F-5F8D-4E2E-8A8E-98126533806E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9171EE92-456E-499E-9818-4AD038899C08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9171EE92-456E-499E-9818-4AD038899C08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9171EE92-456E-499E-9818-4AD038899C08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9171EE92-456E-499E-9818-4AD038899C08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
