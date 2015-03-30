@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.Entities", "Oryza.Entities\Oryza.Entities.csproj", "{68F4D43B-3340-42F6-BF04-8060E7909567}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.Extract", "Oryza.Extract\Oryza.Extract.csproj", "{28252316-CD75-496C-AC25-793AA4D822D7}"
@@ -22,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.Configuration", "Oryza.Configuration\Oryza.Configuration.csproj", "{EEE1CBD4-8AB2-4BB9-B9B9-7CAEE3A7223F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.Capture.Tests", "Oryza.Capture.Tests\Oryza.Capture.Tests.csproj", "{490C5296-6EFB-4066-AF68-06A2CF97500E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.Extract.Tests", "Oryza.Extract.Tests\Oryza.Extract.Tests.csproj", "{AB789C86-CF07-4974-8C7A-63BCBF2E12B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +69,10 @@ Global
 		{490C5296-6EFB-4066-AF68-06A2CF97500E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{490C5296-6EFB-4066-AF68-06A2CF97500E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{490C5296-6EFB-4066-AF68-06A2CF97500E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB789C86-CF07-4974-8C7A-63BCBF2E12B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB789C86-CF07-4974-8C7A-63BCBF2E12B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB789C86-CF07-4974-8C7A-63BCBF2E12B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB789C86-CF07-4974-8C7A-63BCBF2E12B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
