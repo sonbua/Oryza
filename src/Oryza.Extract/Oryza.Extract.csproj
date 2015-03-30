@@ -44,7 +44,7 @@
       <Name>Oryza.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\Oryza.ServiceInterfaces\Oryza.ServiceInterfaces.csproj">
-      <Project>{2f61dd3e-8e07-47ac-9fd2-f86745969695}</Project>
+      <Project>{3D397228-7F9E-4C6D-A2B0-2B72F247454C}</Project>
       <Name>Oryza.ServiceInterfaces</Name>
     </ProjectReference>
   </ItemGroup>

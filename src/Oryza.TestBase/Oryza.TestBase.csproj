@@ -33,6 +33,9 @@
     <Reference Include="SimpleInjector">
       <HintPath>..\packages\SimpleInjector.2.7.3\lib\net45\SimpleInjector.dll</HintPath>
     </Reference>
+    <Reference Include="SimpleInjector.Diagnostics">
+      <HintPath>..\packages\SimpleInjector.2.7.3\lib\net45\SimpleInjector.Diagnostics.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,6 +50,9 @@
       <Project>{f42a21f7-6232-4d18-8619-596f820a2cb4}</Project>
       <Name>Oryza.Composition</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
