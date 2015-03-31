@@ -14,5 +14,15 @@ namespace Oryza.Configuration
         {
             get { return "//div[contains(@class, 'view-rice-price')]"; }
         }
+
+        public string PublishDateXPath
+        {
+            get { return "//span[@class='date-display-single']"; }
+        }
+
+        public string PublishDateFormat
+        {
+            get { return "MMMM dd, yyyy"; }
+        }
     }
 }

@@ -1,0 +1,334 @@
+<div class="view view-rice-price view-id-rice_price view-display-id-block_2 view-dom-id-b33816a849245aaf4e967507f9ce16e5">
+        
+  
+  
+      <div class="view-content">
+      <div class="view-grouping"><div class="view-grouping-header"><span class="date-display-single">March 30th, 2015</span></div><div class="view-grouping-content"><table class="views-table cols-0">
+        <caption><span class="Long grain white rice - high quality clearfix"><b>Long grain white rice - high quality</b></span></caption>
+      <tbody>
+          <tr class="Long grain white rice - high quality">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Thailand 100% B grade          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            395-405          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Long grain white rice - high quality">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Vietnam 5% broken          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            365-375          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-73">↑</span>           </td>
+              </tr>
+          <tr class="Long grain white rice - high quality">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            India 5% broken          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            375-385          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Long grain white rice - high quality">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Pakistan 5% broken          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            350-360          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-74">↓</span>           </td>
+              </tr>
+          <tr class="Long grain white rice - high quality">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Myanmar 5% broken          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            410-420          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Long grain white rice - high quality">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Cambodia 5% broken          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            425-435          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Long grain white rice - high quality">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            U.S. 4% broken          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            480-490          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Long grain white rice - high quality">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Uruguay 5% broken          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            575-585          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Long grain white rice - high quality">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Argentina 5% broken          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            565-575          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+      </tbody>
+</table>
+<table class="views-table cols-0">
+        <caption><span class="Long grain white rice - low quality clearfix"><b>Long grain white rice - low quality</b></span></caption>
+      <tbody>
+          <tr class="Long grain white rice - low quality">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Thailand 25% broken          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            370-380          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Long grain white rice - low quality">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Vietnam 25% broken          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            340-350          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Long grain white rice - low quality">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Pakistan 25% broken          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            320-330          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-74">↓</span>           </td>
+              </tr>
+          <tr class="Long grain white rice - low quality">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Cambodia 25% broken          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            410-420          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Long grain white rice - low quality">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            India 25% broken          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            340-350          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Long grain white rice - low quality">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            U.S. 15% broken          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            470-480          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+      </tbody>
+</table>
+<table class="views-table cols-0">
+        <caption><span class="Long grain parboiled rice clearfix"><b>Long grain parboiled rice</b></span></caption>
+      <tbody>
+          <tr class="Long grain parboiled rice">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Thailand parboiled 100% stxd          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            385-395          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Long grain parboiled rice">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Pakistan parboiled 5% broken stxd          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            385-395          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Long grain parboiled rice">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            India parboiled 5% broken stxd          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            370-380          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Long grain parboiled rice">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            U.S. parboiled 4% broken          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            555-565          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Long grain parboiled rice">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Brazil parboiled 5% broken          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            570-580          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Long grain parboiled rice">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Uruguay parboiled 5% broken          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            NQ          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+      </tbody>
+</table>
+<table class="views-table cols-0">
+        <caption><span class="Long grain fragrant rice clearfix"><b>Long grain fragrant rice</b></span></caption>
+      <tbody>
+          <tr class="Long grain fragrant rice">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Thailand Hommali 92%          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            890-900          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Long grain fragrant rice">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Vietnam Jasmine          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            460-470          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Long grain fragrant rice">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            India basmati 2% broken          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            NQ          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Long grain fragrant rice">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Pakistan basmati 2% broken          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            NQ          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Long grain fragrant rice">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Cambodia Phka Mails          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            795-805          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+      </tbody>
+</table>
+<table class="views-table cols-0">
+        <caption><span class="Brokens clearfix"><b>Brokens</b></span></caption>
+      <tbody>
+          <tr class="Brokens">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Thailand A1 Super          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            320-330          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Brokens">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Vietnam 100% broken          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            310-320          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-73">↑</span>           </td>
+              </tr>
+          <tr class="Brokens">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Pakistan 100% broken stxd          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            280-290          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-74">↓</span>           </td>
+              </tr>
+          <tr class="Brokens">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Cambodia A1 Super          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            345-355          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Brokens">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            India 100% broken stxd          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            275-285          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Brokens">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Egypt medium grain brokens          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            NQ          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Brokens">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            U.S. pet food          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            370-380          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Brokens">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Brazil half grain          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            NQ          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+      </tbody>
+</table>
+<table class="views-table cols-0">
+        <caption><span class="Medium grain milled clearfix"><b>Medium grain milled</b></span></caption>
+      <tbody>
+          <tr class="Medium grain milled">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            U.S. Calrose 4% broken          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            865-875          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+          <tr class="Medium grain milled">
+                  <td class="views-field views-field-field-rp-product views-align-left">
+            Egypt medium grain 6%          </td>
+                  <td class="views-field views-field-field-rp-price views-align-right">
+            NQ          </td>
+                  <td class="views-field views-field-field-rp-trend views-align-right">
+            <span class="arrow-75">↔</span>           </td>
+              </tr>
+      </tbody>
+</table>
+</div></div>    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+      <p><b>All prices USD per ton, FOB vessel, oryza.com</b></p>
+    </div>
+  
+  
+</div>

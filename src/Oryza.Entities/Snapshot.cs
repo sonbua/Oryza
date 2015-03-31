@@ -23,9 +23,9 @@ namespace Oryza.Entities
         public string RawData { get; set; }
 
         /// <summary>
-        /// Holds extracted HTML, that are necessarily ready for analysis.
+        /// Holds price table in HTML, that are necessarily ready for analysis.
         /// </summary>
-        public string ExtractedData { get; set; }
+        public string PriceTableData { get; set; }
 
         public Metadata Metadata { get; set; }
     }

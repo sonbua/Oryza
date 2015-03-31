@@ -35,10 +35,20 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICategoryExtractor.cs" />
     <Compile Include="IConfiguration.cs" />
+    <Compile Include="IDateExtractor.cs" />
+    <Compile Include="IPriceTableExtractor.cs" />
     <Compile Include="IPriceTableParser.cs" />
+    <Compile Include="IPriceUnitExtractor.cs" />
     <Compile Include="IWebCapture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Oryza.Entities\Oryza.Entities.csproj">
+      <Project>{68F4D43B-3340-42F6-BF04-8060E7909567}</Project>
+      <Name>Oryza.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

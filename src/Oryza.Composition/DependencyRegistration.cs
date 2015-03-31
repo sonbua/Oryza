@@ -1,5 +1,7 @@
-﻿using Oryza.Capture;
+﻿using System;
+using Oryza.Capture;
 using Oryza.Configuration;
+using Oryza.Extract;
 using Oryza.Parsing;
 using Oryza.ServiceInterfaces;
 using RestSharp;
@@ -16,9 +18,15 @@ namespace Oryza.Composition
 
             // Oryza.Configuration
             container.Register<IConfiguration, OryzaConfiguration>();
+            container.Register<IFormatProvider, OryzaDateFormatProvider>();
 
             // Oryza.Parsing
             container.Register<IPriceTableParser, PriceTableParser>();
+
+            // Oryza.Extract
+            container.Register<IDateExtractor, PriceTableExtractor>();
+            container.Register<ICategoryExtractor, PriceTableExtractor>();
+            container.Register<IPriceUnitExtractor, PriceTableExtractor>();
 
             // Packages
             container.Register<IRestClient>(() => new RestClient());
