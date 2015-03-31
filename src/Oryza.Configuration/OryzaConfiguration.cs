@@ -10,9 +10,9 @@ namespace Oryza.Configuration
             get { return new Uri("http://oryza.com/global-rice-quotes"); }
         }
 
-        public string PriceTableCssSelector
+        public string PriceTableXPath
         {
-            get { return "view-rice-price"; }
+            get { return "//div[contains(@class, 'view-rice-price')]"; }
         }
     }
 }

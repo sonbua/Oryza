@@ -30,12 +30,30 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PriceTableParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Oryza.Entities\Oryza.Entities.csproj">
+      <Project>{68f4d43b-3340-42f6-bf04-8060e7909567}</Project>
+      <Name>Oryza.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Oryza.ServiceInterfaces\Oryza.ServiceInterfaces.csproj">
+      <Project>{3d397228-7f9e-4c6d-a2b0-2b72f247454c}</Project>
+      <Name>Oryza.ServiceInterfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

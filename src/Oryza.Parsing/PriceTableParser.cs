@@ -1,13 +1,13 @@
-﻿using HtmlAgilityPack;
+using HtmlAgilityPack;
 using Oryza.ServiceInterfaces;
 
-namespace Oryza.Extract
+namespace Oryza.Parsing
 {
-    public class Extractor : IExtractor
+    public class PriceTableParser : IPriceTableParser
     {
         private readonly IConfiguration _configuration;
 
-        public Extractor(IConfiguration configuration)
+        public PriceTableParser(IConfiguration configuration)
         {
             _configuration = configuration;
         }
@@ -17,14 +17,14 @@ namespace Oryza.Extract
         /// </summary>
         /// <param name="html"></param>
         /// <returns></returns>
-        public string Extract(string html)
+        public string Parse(string html)
         {
             var htmlDocument = new HtmlDocument();
 
             htmlDocument.LoadHtml(html);
 
             return htmlDocument.DocumentNode
-                               .SelectSingleNode(string.Format("//div[contains(@class, '{0}')]", _configuration.PriceTableCssSelector))
+                               .SelectSingleNode(_configuration.PriceTableXPath)
                                .OuterHtml;
         }
     }

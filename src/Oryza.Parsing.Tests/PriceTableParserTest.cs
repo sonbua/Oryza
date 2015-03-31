@@ -4,30 +4,29 @@ using Oryza.ServiceInterfaces;
 using Oryza.TestBase;
 using Xunit;
 
-namespace Oryza.Extract.Tests
+namespace Oryza.Parsing.Tests
 {
-    public class ExtractorTest
+    public class PriceTableParserTest
     {
         private readonly IServiceProvider _serviceProvider;
 
-        public ExtractorTest()
+        public PriceTableParserTest()
         {
             _serviceProvider = new TestDoublesContainerBuilder().Build();
         }
 
         [Fact]
-        public void Extract_InputHtml_ReturnsExtractedTable()
+        public void Parse_InputHtml_ReturnsHtmlPriceTable()
         {
             // arrange
-            var extractor = _serviceProvider.GetService<IExtractor>();
-            var configuration = _serviceProvider.GetService<IConfiguration>();
+            var parser = _serviceProvider.GetService<IPriceTableParser>();
             var html = File.ReadAllText("oryza_web_page.txt");
 
             // act
-            var priceTable = extractor.Extract(html);
+            var priceTable = parser.Parse(html);
 
             // assert
-            Assert.Contains(configuration.PriceTableCssSelector, priceTable);
+            Assert.Contains("view-rice-price", priceTable);
         }
     }
 }

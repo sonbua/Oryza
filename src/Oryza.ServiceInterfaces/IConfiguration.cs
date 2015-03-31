@@ -6,6 +6,6 @@ namespace Oryza.ServiceInterfaces
     {
         Uri OryzaCaptureAddress { get; }
         
-        string PriceTableCssSelector { get; }
+        string PriceTableXPath { get; }
     }
 }

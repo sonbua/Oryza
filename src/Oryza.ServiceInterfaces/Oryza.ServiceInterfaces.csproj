@@ -36,7 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IConfiguration.cs" />
-    <Compile Include="IExtractor.cs" />
+    <Compile Include="IPriceTableParser.cs" />
     <Compile Include="IWebCapture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
