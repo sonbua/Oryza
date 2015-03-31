@@ -7,7 +7,7 @@ namespace Oryza.Capture.Tests
 {
     public class WebCaptureTest
     {
-        private IServiceProvider _serviceProvider;
+        private readonly IServiceProvider _serviceProvider;
 
         public WebCaptureTest()
         {

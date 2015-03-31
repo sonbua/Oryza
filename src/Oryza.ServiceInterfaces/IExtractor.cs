@@ -2,5 +2,6 @@
 {
     public interface IExtractor
     {
+        string Extract(string html);
     }
 }
