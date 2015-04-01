@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Oryza.ServiceInterfaces;
 
 namespace Oryza.Configuration
@@ -23,6 +24,16 @@ namespace Oryza.Configuration
         public string PublishDateFormat
         {
             get { return "MMMM dd, yyyy"; }
+        }
+
+        public string PriceUnitXPath
+        {
+            get { return "//div[@class='view-footer']/p/b"; }
+        }
+
+        public ISet<string> DefaultPriceUnits
+        {
+            get { return new SortedSet<string> {"USD per ton"}; }
         }
     }
 }

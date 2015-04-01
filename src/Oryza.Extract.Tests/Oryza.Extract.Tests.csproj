@@ -52,6 +52,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Oryza.Entities\Oryza.Entities.csproj">
+      <Project>{68F4D43B-3340-42F6-BF04-8060E7909567}</Project>
+      <Name>Oryza.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Oryza.ServiceInterfaces\Oryza.ServiceInterfaces.csproj">
       <Project>{3D397228-7F9E-4C6D-A2B0-2B72F247454C}</Project>
       <Name>Oryza.ServiceInterfaces</Name>

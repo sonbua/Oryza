@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Oryza.ServiceInterfaces
 {
@@ -11,5 +12,9 @@ namespace Oryza.ServiceInterfaces
         string PublishDateXPath { get; }
 
         string PublishDateFormat { get; }
+
+        string PriceUnitXPath { get; }
+
+        ISet<string> DefaultPriceUnits { get; }
     }
 }
