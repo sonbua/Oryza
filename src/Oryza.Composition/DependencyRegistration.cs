@@ -25,7 +25,7 @@ namespace Oryza.Composition
 
             // Oryza.Extract
             container.Register<IDateExtractor, PriceTableExtractor>();
-            container.Register<ICategoryExtractor, PriceTableExtractor>();
+            container.Register<ICategoriesExtractor, PriceTableExtractor>();
             container.Register<IPriceUnitExtractor, PriceTableExtractor>();
 
             // Packages

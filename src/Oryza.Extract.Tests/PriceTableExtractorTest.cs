@@ -48,14 +48,18 @@ namespace Oryza.Extract.Tests
         public void ExtractCategories_PriceTable_ReturnsCorrectCategories()
         {
             // arrange
-            var extractor = _serviceProvider.GetService<ICategoryExtractor>();
+            var extractor = _serviceProvider.GetService<ICategoriesExtractor>();
             var priceTable = File.ReadAllText("oryza_price_table.txt");
 
             // act
             var categories = extractor.ExtractCategories(priceTable);
 
             // assert
-            Assert.True(categories.Count() == 6);
+            Assert.Equal(6, categories.Count());
+            Assert.Equal("Long grain white rice - high quality", categories.ElementAt(0).Name);
+            Assert.Equal("Thailand 100% B grade", categories.ElementAt(0).Entries.First().Name);
+            Assert.Equal(395M, categories.ElementAt(0).Entries.First().LowPrice);
+            Assert.Equal(405M, categories.ElementAt(0).Entries.First().HighPrice);
         }
     }
 }

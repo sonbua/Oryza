@@ -16,5 +16,19 @@ namespace Oryza.ServiceInterfaces
         string PriceUnitXPath { get; }
 
         ISet<string> DefaultPriceUnits { get; }
+
+        string CategoriesXPath { get; }
+
+        string CategoryNameXPath { get; }
+
+        string CategoryEntriesXPath { get; }
+
+        string CategoryEntryNameXPath { get; }
+
+        string CategoryEntryPriceRangeXPath { get; }
+
+        string PriceUnavailableText { get; }
+
+        string PriceRangeDelimiter { get; }
     }
 }

@@ -3,7 +3,7 @@ using Oryza.Entities;
 
 namespace Oryza.ServiceInterfaces
 {
-    public interface ICategoryExtractor
+    public interface ICategoriesExtractor
     {
         IEnumerable<Category> ExtractCategories(string priceTable);
     }
