@@ -4,6 +4,7 @@ using Oryza.Configuration;
 using Oryza.Extract;
 using Oryza.Parsing;
 using Oryza.ServiceInterfaces;
+using Raven.Client.Document;
 using RestSharp;
 using SimpleInjector;
 
@@ -27,6 +28,13 @@ namespace Oryza.Composition
             container.Register<IDateExtractor, PriceTableExtractor>();
             container.Register<ICategoriesExtractor, PriceTableExtractor>();
             container.Register<IPriceUnitExtractor, PriceTableExtractor>();
+
+            // Oryza.DataAccess
+            container.RegisterSingle(() => new DocumentStore
+                                           {
+                                               Url = "http://localhost:8080",
+                                               DefaultDatabase = "test"
+                                           }.Initialize());
 
             // Packages
             container.Register<IRestClient>(() => new RestClient());

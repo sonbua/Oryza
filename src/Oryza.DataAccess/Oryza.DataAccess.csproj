@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F42A21F7-6232-4D18-8619-596F820A2CB4}</ProjectGuid>
+    <ProjectGuid>{EE3744BF-CDA6-42DA-AAC4-71426FF7692B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Oryza.Composition</RootNamespace>
-    <AssemblyName>Oryza.Composition</AssemblyName>
+    <RootNamespace>Oryza.DataAccess</RootNamespace>
+    <AssemblyName>Oryza.DataAccess</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,22 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Raven.Abstractions, Version=3.0.0.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Raven.Abstractions">
       <HintPath>..\packages\RavenDB.Client.3.0.3599\lib\net45\Raven.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Raven.Client.Lightweight, Version=3.0.0.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Raven.Client.Lightweight">
       <HintPath>..\packages\RavenDB.Client.3.0.3599\lib\net45\Raven.Client.Lightweight.dll</HintPath>
-    </Reference>
-    <Reference Include="RestSharp">
-      <HintPath>..\packages\RestSharp.105.0.1\lib\net4\RestSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="SimpleInjector">
-      <HintPath>..\packages\SimpleInjector.2.7.3\lib\net45\SimpleInjector.dll</HintPath>
-    </Reference>
-    <Reference Include="SimpleInjector.Diagnostics">
-      <HintPath>..\packages\SimpleInjector.2.7.3\lib\net45\SimpleInjector.Diagnostics.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -53,32 +42,11 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DependencyRegistration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Oryza.Capture\Oryza.Capture.csproj">
-      <Project>{318FC6B6-2B48-40D9-B42B-F700470B89B3}</Project>
-      <Name>Oryza.Capture</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Oryza.Configuration\Oryza.Configuration.csproj">
-      <Project>{eee1cbd4-8ab2-4bb9-b9b9-7caee3a7223f}</Project>
-      <Name>Oryza.Configuration</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Oryza.Entities\Oryza.Entities.csproj">
-      <Project>{68f4d43b-3340-42f6-bf04-8060e7909567}</Project>
-      <Name>Oryza.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Oryza.Extract\Oryza.Extract.csproj">
-      <Project>{28252316-cd75-496c-ac25-793aa4d822d7}</Project>
-      <Name>Oryza.Extract</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Oryza.Parsing\Oryza.Parsing.csproj">
-      <Project>{638e79d8-a943-4f3f-9787-6dd782e006d3}</Project>
-      <Name>Oryza.Parsing</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Oryza.ServiceInterfaces\Oryza.ServiceInterfaces.csproj">
-      <Project>{3d397228-7f9e-4c6d-a2b0-2b72f247454c}</Project>
+      <Project>{3D397228-7F9E-4C6D-A2B0-2B72F247454C}</Project>
       <Name>Oryza.ServiceInterfaces</Name>
     </ProjectReference>
   </ItemGroup>
