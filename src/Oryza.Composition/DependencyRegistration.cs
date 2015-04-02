@@ -19,7 +19,6 @@ namespace Oryza.Composition
 
             // Oryza.Configuration
             container.Register<IConfiguration, OryzaConfiguration>();
-            container.Register<IFormatProvider, OryzaDateFormatProvider>();
 
             // Oryza.Parsing
             container.Register<IPriceTableParser, PriceTableParser>();
