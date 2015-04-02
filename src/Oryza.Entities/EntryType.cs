@@ -10,8 +10,6 @@ namespace Oryza.Entities
 
         public ICollection<string> NameVariants { get; set; }
 
-        public string Description { get; set; }
-
         public Metadata Metadata { get; set; }
     }
 }

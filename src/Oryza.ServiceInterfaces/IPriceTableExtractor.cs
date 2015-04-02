@@ -1,6 +1,6 @@
 ﻿namespace Oryza.ServiceInterfaces
 {
-    public interface IPriceTableExtractor : IDateExtractor, ICategoriesExtractor, IPriceUnitExtractor
+    public interface IPriceTableExtractor : IDateExtractor, ICategoriesExtractor, IPriceUnitExtractor, IEntryTypeNameConverter
     {
     }
 }

@@ -70,5 +70,17 @@ namespace Oryza.Configuration
         {
             get { return "-"; }
         }
+
+        public IDictionary<char, string> SpecialCharToWordMap
+        {
+            get
+            {
+                return new Dictionary<char, string>
+                       {
+                           {'%', "percent"},
+                           {'.', string.Empty},
+                       };
+            }
+        }
     }
 }

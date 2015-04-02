@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.Parsing.Tests", "Oryz
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.DataAccess", "Oryza.DataAccess\Oryza.DataAccess.csproj", "{EE3744BF-CDA6-42DA-AAC4-71426FF7692B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.Utility", "Oryza.Utility\Oryza.Utility.csproj", "{FFDD6485-0755-4DA2-A0F3-09479D97FB83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{EE3744BF-CDA6-42DA-AAC4-71426FF7692B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE3744BF-CDA6-42DA-AAC4-71426FF7692B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE3744BF-CDA6-42DA-AAC4-71426FF7692B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFDD6485-0755-4DA2-A0F3-09479D97FB83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFDD6485-0755-4DA2-A0F3-09479D97FB83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFDD6485-0755-4DA2-A0F3-09479D97FB83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFDD6485-0755-4DA2-A0F3-09479D97FB83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

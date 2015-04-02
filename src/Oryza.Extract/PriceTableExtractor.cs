@@ -6,10 +6,11 @@ using System.Text.RegularExpressions;
 using HtmlAgilityPack;
 using Oryza.Entities;
 using Oryza.ServiceInterfaces;
+using Oryza.Utility;
 
 namespace Oryza.Extract
 {
-    public class PriceTableExtractor : IPriceTableExtractor, IDateExtractor, ICategoriesExtractor, IPriceUnitExtractor
+    public class PriceTableExtractor : IPriceTableExtractor, IDateExtractor, ICategoriesExtractor, IPriceUnitExtractor, IEntryTypeNameConverter
     {
         private readonly IConfiguration _configuration;
 
@@ -110,6 +111,45 @@ namespace Oryza.Extract
                        HighPrice = highPrice,
                        LowPrice = lowPrice
                    };
+        }
+
+        public string ConvertEntryName(string entryName)
+        {
+            var fragments = entryName.Split(' ', '-')
+                                     .SelectMany(Capitalize)
+                                     .SelectMany(TranslateSpecialChar)
+                                     .ToArray();
+
+            return new string(fragments);
+        }
+
+        private IEnumerable<char> Capitalize(string word)
+        {
+            if (word.IsNullOrEmpty())
+            {
+                yield break;
+            }
+
+            yield return char.ToUpper(word[0]);
+
+            foreach (var c in word.Substring(1))
+            {
+                yield return c;
+            }
+        }
+
+        private IEnumerable<char> TranslateSpecialChar(char c)
+        {
+            if (!_configuration.SpecialCharToWordMap.ContainsKey(c))
+            {
+                yield return c;
+                yield break;
+            }
+
+            foreach (var translatedChar in _configuration.SpecialCharToWordMap[c])
+            {
+                yield return translatedChar;
+            }
         }
     }
 }

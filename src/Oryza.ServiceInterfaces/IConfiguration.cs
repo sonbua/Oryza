@@ -30,5 +30,7 @@ namespace Oryza.ServiceInterfaces
         string PriceUnavailableText { get; }
 
         string PriceRangeDelimiter { get; }
+
+        IDictionary<char, string> SpecialCharToWordMap { get; }
     }
 }

@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3D397228-7F9E-4C6D-A2B0-2B72F247454C}</ProjectGuid>
+    <ProjectGuid>{FFDD6485-0755-4DA2-A0F3-09479D97FB83}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Oryza.ServiceInterfaces</RootNamespace>
-    <AssemblyName>Oryza.ServiceInterfaces</AssemblyName>
+    <RootNamespace>Oryza.Utility</RootNamespace>
+    <AssemblyName>Oryza.Utility</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -35,21 +35,9 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ICategoriesExtractor.cs" />
-    <Compile Include="IConfiguration.cs" />
-    <Compile Include="IDateExtractor.cs" />
-    <Compile Include="IEntryTypeNameConverter.cs" />
-    <Compile Include="IPriceTableExtractor.cs" />
-    <Compile Include="IPriceTableParser.cs" />
-    <Compile Include="IPriceUnitExtractor.cs" />
-    <Compile Include="IWebCapture.cs" />
+    <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Oryza.Entities\Oryza.Entities.csproj">
-      <Project>{68F4D43B-3340-42F6-BF04-8060E7909567}</Project>
-      <Name>Oryza.Entities</Name>
-    </ProjectReference>
+    <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
