@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Oryza.Entities
 {
@@ -8,7 +7,7 @@ namespace Oryza.Entities
     /// </summary>
     public class Snapshot : IEntity
     {
-        public Guid Id { get; set; }
+        public long Id { get; set; }
 
         public ICollection<Category> Categories { get; set; }
 
