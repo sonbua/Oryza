@@ -1,20 +1,12 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using Oryza.ServiceInterfaces;
 using Oryza.TestBase;
 using Xunit;
 
 namespace Oryza.Parsing.Tests
 {
-    public class PriceTableParserTest
+    public class PriceTableParserTest : Test
     {
-        private readonly IServiceProvider _serviceProvider;
-
-        public PriceTableParserTest()
-        {
-            _serviceProvider = new TestDoublesContainerBuilder().Build();
-        }
-
         [Fact]
         public void Parse_InputHtml_ReturnsHtmlPriceTable()
         {

@@ -1,19 +1,11 @@
-﻿using System;
-using Oryza.ServiceInterfaces;
+﻿using Oryza.ServiceInterfaces;
 using Oryza.TestBase;
 using Xunit;
 
 namespace Oryza.Capture.Tests
 {
-    public class WebCaptureTest
+    public class WebCaptureTest : Test
     {
-        private readonly IServiceProvider _serviceProvider;
-
-        public WebCaptureTest()
-        {
-            _serviceProvider = new TestDoublesContainerBuilder().Build();
-        }
-
         [Fact]
         public async void CaptureAsync_CaptureOryzaWebPage_HasOryzaString()
         {

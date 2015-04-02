@@ -7,15 +7,8 @@ using Xunit;
 
 namespace Oryza.Extract.Tests
 {
-    public class PriceTableExtractorTest
+    public class PriceTableExtractorTest : Test
     {
-        private readonly IServiceProvider _serviceProvider;
-
-        public PriceTableExtractorTest()
-        {
-            _serviceProvider = new TestDoublesContainerBuilder().Build();
-        }
-
         [Fact]
         public void ExtractDate_PriceTable_ReturnsCorrectDate()
         {

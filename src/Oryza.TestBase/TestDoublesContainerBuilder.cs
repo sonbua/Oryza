@@ -24,6 +24,8 @@ namespace Oryza.TestBase
 
         public IServiceProvider Build()
         {
+            _container.Verify();
+
             return _container;
         }
     }
