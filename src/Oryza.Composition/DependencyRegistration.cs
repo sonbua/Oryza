@@ -31,7 +31,9 @@ namespace Oryza.Composition
             container.AddRegistration(typeof (IDateExtractor), priceTableExtractorRegistration);
             container.AddRegistration(typeof (ICategoriesExtractor), priceTableExtractorRegistration);
             container.AddRegistration(typeof (IPriceUnitExtractor), priceTableExtractorRegistration);
-            container.AddRegistration(typeof (IEntryTypeNameConverter), priceTableExtractorRegistration);
+            container.AddRegistration(typeof (ICategoryNameConverter), priceTableExtractorRegistration);
+            container.AddRegistration(typeof (ICategoryNameMatcher), priceTableExtractorRegistration);
+            container.AddRegistration(typeof (IEntryNameConverter), priceTableExtractorRegistration);
             container.AddRegistration(typeof (IEntryNameMatcher), priceTableExtractorRegistration);
 
             // Packages

@@ -36,9 +36,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ICategoriesExtractor.cs" />
+    <Compile Include="ICategoryNameConverter.cs" />
+    <Compile Include="ICategoryNameMatcher.cs" />
     <Compile Include="IConfiguration.cs" />
     <Compile Include="IDateExtractor.cs" />
-    <Compile Include="IEntryTypeNameConverter.cs" />
+    <Compile Include="IEntryNameConverter.cs" />
     <Compile Include="IEntryNameMatcher.cs" />
     <Compile Include="IPriceTableExtractor.cs" />
     <Compile Include="IPriceTableParser.cs" />

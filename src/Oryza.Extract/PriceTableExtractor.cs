@@ -10,7 +10,7 @@ using Oryza.Utility;
 
 namespace Oryza.Extract
 {
-    public class PriceTableExtractor : IPriceTableExtractor, IDateExtractor, ICategoriesExtractor, IPriceUnitExtractor, IEntryTypeNameConverter, IEntryNameMatcher
+    public class PriceTableExtractor : IPriceTableExtractor, IDateExtractor, ICategoriesExtractor, IPriceUnitExtractor, ICategoryNameConverter, ICategoryNameMatcher, IEntryNameConverter, IEntryNameMatcher
     {
         private readonly IConfiguration _configuration;
 
@@ -113,14 +113,48 @@ namespace Oryza.Extract
                    };
         }
 
+        public string ConvertCategoryName(string categoryName)
+        {
+            return ConvertNameToType(categoryName);
+        }
+
+        public bool TryMatchCategoryName(string categoryName, IEnumerable<CategoryType> existingCategoryTypes, ICategoryNameConverter categoryNameConverter, out CategoryType match)
+        {
+            match = null;
+
+            var newCategoryTypeName = categoryNameConverter.ConvertCategoryName(categoryName);
+
+            foreach (var categoryType in existingCategoryTypes)
+            {
+                if (categoryType.NameVariants.Contains(categoryName))
+                {
+                    match = categoryType;
+                    return true;
+                }
+
+                if (categoryType.Name == newCategoryTypeName)
+                {
+                    match = categoryType;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public string ConvertEntryName(string entryName)
         {
-            var fragments = entryName.Split(_configuration.EntryNameSeparators.ToArray())
-                                     .SelectMany(Capitalize)
-                                     .SelectMany(TranslateSpecialChar)
-                                     .ToArray();
+            return ConvertNameToType(entryName);
+        }
 
-            return new string(fragments);
+        private string ConvertNameToType(string name)
+        {
+            var segments = name.Split(_configuration.EntryNameSeparators.ToArray())
+                               .SelectMany(Capitalize)
+                               .SelectMany(TranslateSpecialChar)
+                               .ToArray();
+
+            return new string(segments);
         }
 
         private IEnumerable<char> Capitalize(string word)
@@ -152,9 +186,11 @@ namespace Oryza.Extract
             }
         }
 
-        public bool MatchEntryName(string entryName, ICollection<EntryType> existingEntryTypes, IEntryTypeNameConverter entryTypeNameConverter, out EntryType match)
+        public bool TryMatchEntryName(string entryName, IEnumerable<EntryType> existingEntryTypes, IEntryNameConverter entryNameConverter, out EntryType match)
         {
             match = null;
+
+            var newEntryTypeName = entryNameConverter.ConvertEntryName(entryName);
 
             foreach (var entryType in existingEntryTypes)
             {
@@ -163,11 +199,8 @@ namespace Oryza.Extract
                     match = entryType;
                     return true;
                 }
-            }
 
-            foreach (var entryType in existingEntryTypes)
-            {
-                if (entryType.Name == entryTypeNameConverter.ConvertEntryName(entryName))
+                if (entryType.Name == newEntryTypeName)
                 {
                     match = entryType;
                     return true;

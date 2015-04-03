@@ -1,6 +1,6 @@
 namespace Oryza.ServiceInterfaces
 {
-    public interface IEntryTypeNameConverter
+    public interface IEntryNameConverter
     {
         string ConvertEntryName(string entryName);
     }

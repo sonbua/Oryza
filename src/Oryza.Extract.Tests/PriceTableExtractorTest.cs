@@ -70,7 +70,7 @@ namespace Oryza.Extract.Tests
             var categories = extractor.ExtractCategories(_priceTable);
 
             // assert
-            Assert.Equal("Long grain white rice - high quality", categories.ElementAt(0).Name);
+            Assert.Equal("Long grain white rice - high quality", categories.First().Name);
         }
 
         [Fact]
@@ -83,7 +83,7 @@ namespace Oryza.Extract.Tests
             var categories = extractor.ExtractCategories(_priceTable);
 
             // assert
-            Assert.Equal("Thailand 100% B grade", categories.ElementAt(0).Entries.First().Name);
+            Assert.Equal("Thailand 100% B grade", categories.First().Entries.First().Name);
         }
 
         [Fact]
@@ -96,8 +96,38 @@ namespace Oryza.Extract.Tests
             var categories = extractor.ExtractCategories(_priceTable);
 
             // assert
-            Assert.Equal(395M, categories.ElementAt(0).Entries.First().LowPrice);
-            Assert.Equal(405M, categories.ElementAt(0).Entries.First().HighPrice);
+            Assert.Equal(395M, categories.First().Entries.First().LowPrice);
+            Assert.Equal(405M, categories.First().Entries.First().HighPrice);
+        }
+
+        [Theory]
+        [InlineData("Long grain white rice - high quality", "LongGrainWhiteRiceHighQuality")]
+        public void ConvertCategoryName_CategoryName_ReturnsCorrectCategoryTypeName(string categoryName, string expectedEntryTypeName)
+        {
+            // arrange
+            var categoryNameConverter = _serviceProvider.GetService<ICategoryNameConverter>();
+
+            // act
+            var categoryTypeName = categoryNameConverter.ConvertCategoryName(categoryName);
+
+            // assert
+            Assert.Equal(expectedEntryTypeName, categoryTypeName);
+        }
+
+        [Theory]
+        [ClassData(typeof (CategoryTypeList))]
+        public void TryMatchCategoryName_GivenACategoryNameAndAListOfCategoryTypes_ReturnsExpectedResult(string categoryName, ICollection<CategoryType> existingCategoryTypes, bool expected)
+        {
+            // arrange
+            var categoryNameMatcher = _serviceProvider.GetService<ICategoryNameMatcher>();
+            var categoryNameConverter = _serviceProvider.GetService<ICategoryNameConverter>();
+            CategoryType match;
+
+            // act
+            var isMatch = categoryNameMatcher.TryMatchCategoryName(categoryName, existingCategoryTypes, categoryNameConverter, out match);
+
+            // assert
+            Assert.Equal(expected, isMatch);
         }
 
         [Theory]
@@ -107,7 +137,7 @@ namespace Oryza.Extract.Tests
         public void ConvertEntryName_EntryName_ReturnsCorrectEntryTypeName(string entryName, string expectedEntryTypeName)
         {
             // arrange
-            var entryTypeNameConverter = _serviceProvider.GetService<IEntryTypeNameConverter>();
+            var entryTypeNameConverter = _serviceProvider.GetService<IEntryNameConverter>();
 
             // act
             var entryTypeName = entryTypeNameConverter.ConvertEntryName(entryName);
@@ -118,18 +148,64 @@ namespace Oryza.Extract.Tests
 
         [Theory]
         [ClassData(typeof (EntryTypeList))]
-        public void MatchEntryName_GivenAnEntryNameAndAListOfEntryTypes_ReturnsExpectedResult(string entryName, ICollection<EntryType> existingEntryTypes, bool expected)
+        public void TryMatchEntryName_GivenAnEntryNameAndAListOfEntryTypes_ReturnsExpectedResult(string entryName, ICollection<EntryType> existingEntryTypes, bool expected)
         {
             // arrange
             var entryNameMatcher = _serviceProvider.GetService<IEntryNameMatcher>();
-            var entryTypeNameConverter = _serviceProvider.GetService<IEntryTypeNameConverter>();
+            var entryTypeNameConverter = _serviceProvider.GetService<IEntryNameConverter>();
             EntryType match;
 
             // act
-            var isMatch = entryNameMatcher.MatchEntryName(entryName, existingEntryTypes, entryTypeNameConverter, out match);
+            var isMatch = entryNameMatcher.TryMatchEntryName(entryName, existingEntryTypes, entryTypeNameConverter, out match);
 
             // assert
             Assert.Equal(expected, isMatch);
+        }
+
+        private class CategoryTypeList : IEnumerable<object[]>
+        {
+            public IEnumerator<object[]> GetEnumerator()
+            {
+                yield return new object[]
+                             {
+                                 "Long grain white rice - high quality",
+                                 new List<CategoryType>(),
+                                 false
+                             };
+
+                yield return new object[]
+                             {
+                                 "Long grain white rice - high quality",
+                                 new List<CategoryType> {new CategoryType {NameVariants = new List<string> {"Long grain white rice - high quality"}}},
+                                 true
+                             };
+
+                yield return new object[]
+                             {
+                                 "Long   grain   white   rice   -   high   quality",
+                                 new List<CategoryType> {new CategoryType {NameVariants = new List<string> {"Long grain white rice - high quality"}}},
+                                 false
+                             };
+
+                yield return new object[]
+                             {
+                                 "Long   grain   white   rice   -   high   quality",
+                                 new List<CategoryType> {new CategoryType {Name = "LongGrainWhiteRiceHighQuality", NameVariants = new List<string> {"Long grain white rice - high quality"}}},
+                                 true
+                             };
+
+                yield return new object[]
+                             {
+                                 "XXX",
+                                 new List<CategoryType> {new CategoryType {Name = "LongGrainWhiteRiceHighQuality", NameVariants = new List<string> {"Long grain white rice - high quality"}}},
+                                 false
+                             };
+            }
+
+            IEnumerator IEnumerable.GetEnumerator()
+            {
+                return GetEnumerator();
+            }
         }
 
         private class EntryTypeList : IEnumerable<object[]>
@@ -148,6 +224,13 @@ namespace Oryza.Extract.Tests
                                  "Thailand 100% B grade",
                                  new List<EntryType> {new EntryType {NameVariants = new List<string> {"Thailand 100% B grade"}}},
                                  true
+                             };
+
+                yield return new object[]
+                             {
+                                 "Thailand   100%   B   grade",
+                                 new List<EntryType> {new EntryType {NameVariants = new List<string> {"Thailand 100% B grade"}}},
+                                 false
                              };
 
                 yield return new object[]

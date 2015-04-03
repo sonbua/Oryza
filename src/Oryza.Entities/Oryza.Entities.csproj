@@ -36,6 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Category.cs" />
+    <Compile Include="CategoryType.cs" />
     <Compile Include="Entry.cs" />
     <Compile Include="EntryType.cs" />
     <Compile Include="IEntity.cs" />

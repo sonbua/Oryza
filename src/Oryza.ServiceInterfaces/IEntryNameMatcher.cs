@@ -5,6 +5,14 @@ namespace Oryza.ServiceInterfaces
 {
     public interface IEntryNameMatcher
     {
-        bool MatchEntryName(string entryName, ICollection<EntryType> existingEntryTypes, IEntryTypeNameConverter entryTypeNameConverter, out EntryType match);
+        /// <summary>
+        /// Try to match this new captured entry name <paramref name="entryName"/> in the existing entry types <paramref name="existingEntryTypes"/> stored in database.
+        /// </summary>
+        /// <param name="entryName"></param>
+        /// <param name="existingEntryTypes"></param>
+        /// <param name="entryNameConverter"></param>
+        /// <param name="match"></param>
+        /// <returns></returns>
+        bool TryMatchEntryName(string entryName, IEnumerable<EntryType> existingEntryTypes, IEntryNameConverter entryNameConverter, out EntryType match);
     }
 }
