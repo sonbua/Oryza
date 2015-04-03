@@ -116,7 +116,7 @@ namespace Oryza.Extract.Tests
 
         [Theory]
         [ClassData(typeof (CategoryTypeList))]
-        public void TryMatchCategoryName_GivenACategoryNameAndAListOfCategoryTypes_ReturnsExpectedResult(string categoryName, ICollection<CategoryType> existingCategoryTypes, bool expected)
+        public void TryMatchCategoryName_GivenACategoryNameAndAListOfCategoryTypes_ReturnsExpectedResult(string categoryName, IEnumerable<CategoryType> existingCategoryTypes, bool expected)
         {
             // arrange
             var categoryNameMatcher = _serviceProvider.GetService<ICategoryNameMatcher>();
@@ -148,7 +148,7 @@ namespace Oryza.Extract.Tests
 
         [Theory]
         [ClassData(typeof (EntryTypeList))]
-        public void TryMatchEntryName_GivenAnEntryNameAndAListOfEntryTypes_ReturnsExpectedResult(string entryName, ICollection<EntryType> existingEntryTypes, bool expected)
+        public void TryMatchEntryName_GivenAnEntryNameAndAListOfEntryTypes_ReturnsExpectedResult(string entryName, IEnumerable<EntryType> existingEntryTypes, bool expected)
         {
             // arrange
             var entryNameMatcher = _serviceProvider.GetService<IEntryNameMatcher>();
