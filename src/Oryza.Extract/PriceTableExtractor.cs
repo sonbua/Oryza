@@ -115,7 +115,7 @@ namespace Oryza.Extract
 
         public string ConvertEntryName(string entryName)
         {
-            var fragments = entryName.Split(' ', '-')
+            var fragments = entryName.Split(_configuration.EntryNameSeparators.ToArray())
                                      .SelectMany(Capitalize)
                                      .SelectMany(TranslateSpecialChar)
                                      .ToArray();

@@ -31,6 +31,8 @@ namespace Oryza.ServiceInterfaces
 
         string PriceRangeDelimiter { get; }
 
+        ISet<char> EntryNameSeparators { get; }
+
         IDictionary<char, string> SpecialCharToWordMap { get; }
     }
 }

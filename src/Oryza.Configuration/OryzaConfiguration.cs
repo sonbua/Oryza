@@ -71,16 +71,14 @@ namespace Oryza.Configuration
             get { return "-"; }
         }
 
+        public ISet<char> EntryNameSeparators
+        {
+            get { return new SortedSet<char> {' ', '-', '.'}; }
+        }
+
         public IDictionary<char, string> SpecialCharToWordMap
         {
-            get
-            {
-                return new Dictionary<char, string>
-                       {
-                           {'%', "percent"},
-                           {'.', string.Empty},
-                       };
-            }
+            get { return new Dictionary<char, string> {{'%', "percent"}}; }
         }
     }
 }
