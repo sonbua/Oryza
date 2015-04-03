@@ -39,6 +39,7 @@
     <Compile Include="IConfiguration.cs" />
     <Compile Include="IDateExtractor.cs" />
     <Compile Include="IEntryTypeNameConverter.cs" />
+    <Compile Include="IEntryNameMatcher.cs" />
     <Compile Include="IPriceTableExtractor.cs" />
     <Compile Include="IPriceTableParser.cs" />
     <Compile Include="IPriceUnitExtractor.cs" />

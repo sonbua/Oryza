@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using Oryza.ServiceInterfaces;
 using Oryza.TestBase;
+using Oryza.TestBase.Composition;
 using Xunit;
 
 namespace Oryza.Parsing.Tests

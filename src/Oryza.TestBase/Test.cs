@@ -1,4 +1,5 @@
 ﻿using System;
+using Oryza.TestBase.Composition;
 using SimpleInjector;
 
 namespace Oryza.TestBase

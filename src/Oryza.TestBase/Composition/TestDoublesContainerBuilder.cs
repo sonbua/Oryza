@@ -2,7 +2,7 @@ using System;
 using Oryza.Composition;
 using SimpleInjector;
 
-namespace Oryza.TestBase
+namespace Oryza.TestBase.Composition
 {
     public class TestDoublesContainerBuilder
     {

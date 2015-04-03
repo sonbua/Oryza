@@ -32,6 +32,7 @@ namespace Oryza.Composition
             container.AddRegistration(typeof (ICategoriesExtractor), priceTableExtractorRegistration);
             container.AddRegistration(typeof (IPriceUnitExtractor), priceTableExtractorRegistration);
             container.AddRegistration(typeof (IEntryTypeNameConverter), priceTableExtractorRegistration);
+            container.AddRegistration(typeof (IEntryNameMatcher), priceTableExtractorRegistration);
 
             // Packages
             container.Register<IRestClient>(() => new RestClient());

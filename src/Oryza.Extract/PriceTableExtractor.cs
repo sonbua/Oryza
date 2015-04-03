@@ -10,7 +10,7 @@ using Oryza.Utility;
 
 namespace Oryza.Extract
 {
-    public class PriceTableExtractor : IPriceTableExtractor, IDateExtractor, ICategoriesExtractor, IPriceUnitExtractor, IEntryTypeNameConverter
+    public class PriceTableExtractor : IPriceTableExtractor, IDateExtractor, ICategoriesExtractor, IPriceUnitExtractor, IEntryTypeNameConverter, IEntryNameMatcher
     {
         private readonly IConfiguration _configuration;
 
@@ -150,6 +150,31 @@ namespace Oryza.Extract
             {
                 yield return translatedChar;
             }
+        }
+
+        public bool MatchEntryName(string entryName, ICollection<EntryType> existingEntryTypes, IEntryTypeNameConverter entryTypeNameConverter, out EntryType match)
+        {
+            match = null;
+
+            foreach (var entryType in existingEntryTypes)
+            {
+                if (entryType.NameVariants.Any(x => x == entryName))
+                {
+                    match = entryType;
+                    return true;
+                }
+            }
+
+            foreach (var entryType in existingEntryTypes)
+            {
+                if (entryType.Name == entryTypeNameConverter.ConvertEntryName(entryName))
+                {
+                    match = entryType;
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

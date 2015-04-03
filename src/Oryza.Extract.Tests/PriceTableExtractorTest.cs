@@ -1,8 +1,13 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Oryza.Entities;
 using Oryza.ServiceInterfaces;
 using Oryza.TestBase;
+using Oryza.TestBase.Composition;
+using Oryza.TestBase.Xunit.Extensions;
 using Xunit;
 
 namespace Oryza.Extract.Tests
@@ -109,6 +114,61 @@ namespace Oryza.Extract.Tests
 
             // assert
             Assert.Equal(expectedEntryTypeName, entryTypeName);
+        }
+
+        [Theory]
+        [ClassData(typeof (EntryTypeList))]
+        public void MatchEntryName_GivenAnEntryNameAndAListOfEntryTypes_ReturnsExpectedResult(string entryName, ICollection<EntryType> existingEntryTypes, bool expected)
+        {
+            // arrange
+            var entryNameMatcher = _serviceProvider.GetService<IEntryNameMatcher>();
+            var entryTypeNameConverter = _serviceProvider.GetService<IEntryTypeNameConverter>();
+            EntryType match;
+
+            // act
+            var isMatch = entryNameMatcher.MatchEntryName(entryName, existingEntryTypes, entryTypeNameConverter, out match);
+
+            // assert
+            Assert.Equal(expected, isMatch);
+        }
+
+        private class EntryTypeList : IEnumerable<object[]>
+        {
+            public IEnumerator<object[]> GetEnumerator()
+            {
+                yield return new object[]
+                             {
+                                 "Thailand 100% B grade",
+                                 new List<EntryType>(),
+                                 false
+                             };
+
+                yield return new object[]
+                             {
+                                 "Thailand 100% B grade",
+                                 new List<EntryType> {new EntryType {NameVariants = new List<string> {"Thailand 100% B grade"}}},
+                                 true
+                             };
+
+                yield return new object[]
+                             {
+                                 "Thailand   100%   B   grade",
+                                 new List<EntryType> {new EntryType {Name = "Thailand100percentBGrade", NameVariants = new List<string> {"Thailand 100% B grade"}}},
+                                 true
+                             };
+
+                yield return new object[]
+                             {
+                                 "XXX",
+                                 new List<EntryType> {new EntryType {Name = "Thailand100percentBGrade", NameVariants = new List<string> {"Thailand 100% B grade"}}},
+                                 false
+                             };
+            }
+
+            IEnumerator IEnumerable.GetEnumerator()
+            {
+                return GetEnumerator();
+            }
         }
     }
 }

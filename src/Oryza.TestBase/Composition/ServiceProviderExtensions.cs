@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Oryza.TestBase
+namespace Oryza.TestBase.Composition
 {
     public static class ServiceProviderExtensions
     {

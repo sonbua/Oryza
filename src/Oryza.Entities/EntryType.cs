@@ -11,5 +11,11 @@ namespace Oryza.Entities
         public ICollection<string> NameVariants { get; set; }
 
         public Metadata Metadata { get; set; }
+
+        public EntryType()
+        {
+            Name = string.Empty;
+            NameVariants = new List<string>();
+        }
     }
 }
