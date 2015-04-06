@@ -162,6 +162,21 @@ namespace Oryza.Extract.Tests
             Assert.Equal(expected, isMatch);
         }
 
+        [Fact]
+        public void ExtractPriceTable_GivenAPriceTable_ReturnsCorrectSnapshot()
+        {
+            // arrange
+            var priceTableExtractor = _serviceProvider.GetService<IPriceTableExtractor>();
+
+            // act
+            var snapshot = priceTableExtractor.ExtractPriceTable(_priceTable);
+
+            // assert
+            Assert.Equal(new DateTime(2015, 3, 30), snapshot.PublishDate);
+            Assert.Equal(6, snapshot.Categories.Count);
+            Assert.Equal("USD per ton", snapshot.PriceUnit);
+        }
+
         private class CategoryTypeList : IEnumerable<object[]>
         {
             public IEnumerator<object[]> GetEnumerator()

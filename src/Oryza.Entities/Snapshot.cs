@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Oryza.Entities
 {
@@ -10,6 +11,11 @@ namespace Oryza.Entities
         public long Id { get; set; }
 
         public ICollection<Category> Categories { get; set; }
+
+        /// <summary>
+        /// Holds the publication date of this snapshot.
+        /// </summary>
+        public DateTime PublishDate { get; set; }
 
         /// <summary>
         /// Holds the price unit of this snapshot, mostly USD per ton.

@@ -21,7 +21,65 @@ namespace Oryza.Extract
 
         public Snapshot ExtractPriceTable(string priceTable)
         {
-            throw new NotImplementedException();
+            //            using (var session = _documentStore.OpenSession())
+            //            {
+            //                var existingCategoryTypes = session.Query<CategoryType>().ToList();
+            //                var existingEntryTypes = session.Query<EntryType>().ToList();
+            //
+            //                foreach (var category in snapshot.Categories)
+            //                {
+            //                    CategoryType matchCategoryType;
+            //
+            //                    if (TryMatchCategoryName(category.Name, existingCategoryTypes, this, out matchCategoryType))
+            //                    {
+            //                        if (!matchCategoryType.NameVariants.Contains(category.Name))
+            //                        {
+            //                            matchCategoryType.NameVariants.Add(category.Name);
+            //                        }
+            //                    }
+            //                    else
+            //                    {
+            //                        existingCategoryTypes.Add(new CategoryType
+            //                                                  {
+            //                                                      Name = ConvertCategoryName(category.Name),
+            //                                                      NameVariants = new List<string> {category.Name}
+            //                                                  });
+            //                    }
+            //
+            //                    foreach (var entry in category.Entries)
+            //                    {
+            //                        EntryType matchEntryType;
+            //
+            //                        if (TryMatchEntryName(entry.Name, existingEntryTypes, this, out matchEntryType))
+            //                        {
+            //                            if (!matchEntryType.NameVariants.Contains(entry.Name))
+            //                            {
+            //                                matchEntryType.NameVariants.Add(entry.Name);
+            //                            }
+            //                        }
+            //                        else
+            //                        {
+            //                            existingEntryTypes.Add(new EntryType
+            //                                                   {
+            //                                                       Name = ConvertEntryName(entry.Name),
+            //                                                       NameVariants = new List<string> {entry.Name}
+            //                                                   });
+            //                        }
+            //                    }
+            //                }
+            //
+            //                session.BatchStore(existingCategoryTypes);
+            //                session.BatchStore(existingEntryTypes);
+            //
+            //                session.SaveChanges();
+            //            }
+
+            return new Snapshot
+                   {
+                       PriceUnit = ExtractPriceUnit(priceTable),
+                       PublishDate = ExtractDate(priceTable),
+                       Categories = ExtractCategories(priceTable).ToList()
+                   };
         }
 
         public DateTime ExtractDate(string priceTable)
@@ -59,6 +117,7 @@ namespace Oryza.Extract
 
             htmlDocument.LoadHtml(priceTable);
 
+            // TODO: improve
             var extractCategories = htmlDocument.DocumentNode
                                                 .SelectNodes(_configuration.CategoriesXPath)
                                                 .Select(ExtractCategory);
@@ -76,7 +135,7 @@ namespace Oryza.Extract
 
         private string ExtractCategoryName(HtmlNode categoryTable)
         {
-            return categoryTable.SelectSingleNode(_configuration.CategoryNameXPath).InnerText;
+            return categoryTable.SelectSingleNode(_configuration.CategoryNameXPath).InnerText.Trim();
         }
 
         private ICollection<Entry> ExtractCategoryEntries(HtmlNode categoryTable)
@@ -171,6 +230,7 @@ namespace Oryza.Extract
 
             yield return char.ToUpper(word[0]);
 
+            // TODO: improve
             foreach (var c in word.Substring(1))
             {
                 yield return c;
