@@ -10,13 +10,18 @@ using Oryza.Utility;
 
 namespace Oryza.Extract
 {
-    public class PriceTableExtractor : IPriceTableExtractor, IDateExtractor, ICategoriesExtractor, IPriceUnitExtractor, ICategoryNameConverter, ICategoryNameMatcher, IEntryNameConverter, IEntryNameMatcher
+    public class PriceTableExtractor : IPriceTableExtractor, IDateExtractor, ICategoriesExtractor, ICategoryNameConverter, ICategoryNameMatcher, IEntryNameConverter, IEntryNameMatcher, IPriceUnitExtractor
     {
         private readonly IConfiguration _configuration;
 
         public PriceTableExtractor(IConfiguration configuration)
         {
             _configuration = configuration;
+        }
+
+        public Snapshot ExtractPriceTable(string priceTable)
+        {
+            throw new NotImplementedException();
         }
 
         public DateTime ExtractDate(string priceTable)
