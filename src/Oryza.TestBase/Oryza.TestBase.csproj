@@ -86,6 +86,7 @@
   <ItemGroup>
     <None Include="..\packages\RavenDB.Database.3.0.3599\lib\net45\Raven.Studio.Html5.zip">
       <Link>Raven.Studio.Html5.zip</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
