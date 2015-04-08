@@ -3,7 +3,7 @@ using Oryza.TestBase;
 using Oryza.TestBase.Composition;
 using Xunit;
 
-namespace Oryza.Capture.Tests
+namespace Oryza.Infrastructure.Tests.Capture
 {
     public class WebCaptureTest : Test
     {

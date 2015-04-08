@@ -57,10 +57,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Oryza.Capture\Oryza.Capture.csproj">
-      <Project>{318FC6B6-2B48-40D9-B42B-F700470B89B3}</Project>
-      <Name>Oryza.Capture</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Oryza.Configuration\Oryza.Configuration.csproj">
       <Project>{eee1cbd4-8ab2-4bb9-b9b9-7caee3a7223f}</Project>
       <Name>Oryza.Configuration</Name>
@@ -69,13 +65,9 @@
       <Project>{68f4d43b-3340-42f6-bf04-8060e7909567}</Project>
       <Name>Oryza.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Oryza.Extract\Oryza.Extract.csproj">
-      <Project>{28252316-cd75-496c-ac25-793aa4d822d7}</Project>
-      <Name>Oryza.Extract</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Oryza.Parsing\Oryza.Parsing.csproj">
-      <Project>{638e79d8-a943-4f3f-9787-6dd782e006d3}</Project>
-      <Name>Oryza.Parsing</Name>
+    <ProjectReference Include="..\Oryza.Infrastructure\Oryza.Infrastructure.csproj">
+      <Project>{01d37c44-2ffe-48e7-a1d8-07d9f0ec72bf}</Project>
+      <Name>Oryza.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\Oryza.ServiceInterfaces\Oryza.ServiceInterfaces.csproj">
       <Project>{3d397228-7f9e-4c6d-a2b0-2b72f247454c}</Project>

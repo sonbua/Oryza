@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Oryza.ServiceInterfaces;
 using RestSharp;
 
-namespace Oryza.Capture
+namespace Oryza.Infrastructure.Capture
 {
     public class WebCapture : IWebCapture
     {

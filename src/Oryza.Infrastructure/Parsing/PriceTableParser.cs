@@ -1,7 +1,7 @@
 using HtmlAgilityPack;
 using Oryza.ServiceInterfaces;
 
-namespace Oryza.Parsing
+namespace Oryza.Infrastructure.Parsing
 {
     public class PriceTableParser : IPriceTableParser
     {

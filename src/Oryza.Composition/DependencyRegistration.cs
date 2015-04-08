@@ -1,8 +1,8 @@
 ﻿using System;
-using Oryza.Capture;
 using Oryza.Configuration;
-using Oryza.Extract;
-using Oryza.Parsing;
+using Oryza.Infrastructure.Capture;
+using Oryza.Infrastructure.Extract;
+using Oryza.Infrastructure.Parsing;
 using Oryza.ServiceInterfaces;
 using Raven.Client;
 using Raven.Client.Document;

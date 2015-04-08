@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Oryza.Extract")]
+[assembly: AssemblyTitle("Oryza.Infrastructure.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Oryza.Extract")]
+[assembly: AssemblyProduct("Oryza.Infrastructure.Tests")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7e754b81-41de-4930-a493-aa7311e6ced2")]
+[assembly: Guid("820e9c43-ba9c-48ed-a055-cd20d7827c6b")]
 
 // Version information for an assembly consists of the following four values:
 //

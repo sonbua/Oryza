@@ -5,14 +5,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{490C5296-6EFB-4066-AF68-06A2CF97500E}</ProjectGuid>
+    <ProjectGuid>{A7061358-D173-43B6-89A3-F4603F9F92F3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Oryza.Capture.Tests</RootNamespace>
-    <AssemblyName>Oryza.Capture.Tests</AssemblyName>
+    <RootNamespace>Oryza.Infrastructure.Tests</RootNamespace>
+    <AssemblyName>Oryza.Infrastructure.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <NuGetPackageImportStamp>f8fedeec</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>c82e2697</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,36 +35,48 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="xunit.abstractions">
       <HintPath>..\packages\xunit.abstractions.2.0.0\lib\net35\xunit.abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="xunit.assert, Version=2.0.0.2929, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="xunit.assert">
       <HintPath>..\packages\xunit.assert.2.0.0\lib\portable-net45+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS\xunit.assert.dll</HintPath>
     </Reference>
-    <Reference Include="xunit.core, Version=2.0.0.2929, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="xunit.core">
       <HintPath>..\packages\xunit.extensibility.core.2.0.0\lib\portable-net45+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS\xunit.core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Capture\WebCaptureTest.cs" />
+    <Compile Include="Extract\PriceTableExtractorTest.cs" />
+    <Compile Include="Parsing\PriceTableParserTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebCaptureTest.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Oryza.ServiceInterfaces\Oryza.ServiceInterfaces.csproj">
-      <Project>{3D397228-7F9E-4C6D-A2B0-2B72F247454C}</Project>
-      <Name>Oryza.ServiceInterfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Oryza.TestBase\Oryza.TestBase.csproj">
-      <Project>{9171EE92-456E-499E-9818-4AD038899C08}</Project>
-      <Name>Oryza.TestBase</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Oryza.Entities\Oryza.Entities.csproj">
+      <Project>{68f4d43b-3340-42f6-bf04-8060e7909567}</Project>
+      <Name>Oryza.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Oryza.ServiceInterfaces\Oryza.ServiceInterfaces.csproj">
+      <Project>{3d397228-7f9e-4c6d-a2b0-2b72f247454c}</Project>
+      <Name>Oryza.ServiceInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Oryza.TestBase\Oryza.TestBase.csproj">
+      <Project>{9171ee92-456e-499e-9818-4ad038899c08}</Project>
+      <Name>Oryza.TestBase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="oryza_price_table.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="oryza_web_page.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

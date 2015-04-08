@@ -10,7 +10,7 @@ using Oryza.TestBase.Composition;
 using Oryza.TestBase.Xunit.Extensions;
 using Xunit;
 
-namespace Oryza.Extract.Tests
+namespace Oryza.Infrastructure.Tests.Extract
 {
     public class PriceTableExtractorTest : Test
     {

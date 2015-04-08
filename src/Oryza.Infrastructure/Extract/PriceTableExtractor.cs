@@ -8,7 +8,7 @@ using Oryza.Entities;
 using Oryza.ServiceInterfaces;
 using Oryza.Utility;
 
-namespace Oryza.Extract
+namespace Oryza.Infrastructure.Extract
 {
     public class PriceTableExtractor : IPriceTableExtractor, IDateExtractor, ICategoriesExtractor, ICategoryNameConverter, ICategoryNameMatcher, IEntryNameConverter, IEntryNameMatcher, IPriceUnitExtractor
     {

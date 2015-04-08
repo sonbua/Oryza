@@ -4,7 +4,7 @@ using Oryza.TestBase;
 using Oryza.TestBase.Composition;
 using Xunit;
 
-namespace Oryza.Parsing.Tests
+namespace Oryza.Infrastructure.Tests.Parsing
 {
     public class PriceTableParserTest : Test
     {
