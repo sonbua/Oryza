@@ -57,10 +57,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Oryza.Configuration\Oryza.Configuration.csproj">
-      <Project>{eee1cbd4-8ab2-4bb9-b9b9-7caee3a7223f}</Project>
-      <Name>Oryza.Configuration</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Oryza.Entities\Oryza.Entities.csproj">
       <Project>{68f4d43b-3340-42f6-bf04-8060e7909567}</Project>
       <Name>Oryza.Entities</Name>

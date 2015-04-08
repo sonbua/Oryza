@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Oryza.ServiceInterfaces;
 
-namespace Oryza.Configuration
+namespace Oryza.Infrastructure.Configuration
 {
     public class OryzaConfiguration : IConfiguration
     {

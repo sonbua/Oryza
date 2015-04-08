@@ -1,6 +1,6 @@
 ﻿using System;
-using Oryza.Configuration;
 using Oryza.Infrastructure.Capture;
+using Oryza.Infrastructure.Configuration;
 using Oryza.Infrastructure.Extract;
 using Oryza.Infrastructure.Parsing;
 using Oryza.ServiceInterfaces;

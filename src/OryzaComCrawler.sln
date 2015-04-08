@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.Entities", "Oryza.Entities\Oryza.Entities.csproj", "{68F4D43B-3340-42F6-BF04-8060E7909567}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.Composition", "Oryza.Composition\Oryza.Composition.csproj", "{F42A21F7-6232-4D18-8619-596F820A2CB4}"
@@ -10,8 +8,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.TestBase", "Oryza.TestBase\Oryza.TestBase.csproj", "{9171EE92-456E-499E-9818-4AD038899C08}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.ServiceInterfaces", "Oryza.ServiceInterfaces\Oryza.ServiceInterfaces.csproj", "{3D397228-7F9E-4C6D-A2B0-2B72F247454C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.Configuration", "Oryza.Configuration\Oryza.Configuration.csproj", "{EEE1CBD4-8AB2-4BB9-B9B9-7CAEE3A7223F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.Utility", "Oryza.Utility\Oryza.Utility.csproj", "{FFDD6485-0755-4DA2-A0F3-09479D97FB83}"
 EndProject
@@ -41,10 +37,6 @@ Global
 		{3D397228-7F9E-4C6D-A2B0-2B72F247454C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D397228-7F9E-4C6D-A2B0-2B72F247454C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D397228-7F9E-4C6D-A2B0-2B72F247454C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EEE1CBD4-8AB2-4BB9-B9B9-7CAEE3A7223F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EEE1CBD4-8AB2-4BB9-B9B9-7CAEE3A7223F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EEE1CBD4-8AB2-4BB9-B9B9-7CAEE3A7223F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EEE1CBD4-8AB2-4BB9-B9B9-7CAEE3A7223F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FFDD6485-0755-4DA2-A0F3-09479D97FB83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FFDD6485-0755-4DA2-A0F3-09479D97FB83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFDD6485-0755-4DA2-A0F3-09479D97FB83}.Release|Any CPU.ActiveCfg = Release|Any CPU
