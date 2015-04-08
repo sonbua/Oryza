@@ -117,11 +117,9 @@ namespace Oryza.Extract
 
             htmlDocument.LoadHtml(priceTable);
 
-            // TODO: improve
-            var extractCategories = htmlDocument.DocumentNode
-                                                .SelectNodes(_configuration.CategoriesXPath)
-                                                .Select(ExtractCategory);
-            return extractCategories;
+            return htmlDocument.DocumentNode
+                               .SelectNodes(_configuration.CategoriesXPath)
+                               .Select(ExtractCategory);
         }
 
         private Category ExtractCategory(HtmlNode categoryTable)
@@ -230,10 +228,9 @@ namespace Oryza.Extract
 
             yield return char.ToUpper(word[0]);
 
-            // TODO: improve
-            foreach (var c in word.Substring(1))
+            for (var i = 1; i < word.Length; i++)
             {
-                yield return c;
+                yield return word[i];
             }
         }
 
