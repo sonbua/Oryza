@@ -39,6 +39,7 @@ namespace Oryza.TestBase
         {
             var documentStore = _serviceProvider.GetService<IDocumentStore>();
             var indexDefinitions = documentStore.DatabaseCommands.GetIndexes(0, 100);
+
             foreach (var indexDefinition in indexDefinitions)
             {
                 documentStore.DatabaseCommands.DeleteByIndex(indexDefinition.Name, new IndexQuery());

@@ -73,6 +73,7 @@
   <ItemGroup>
     <Compile Include="Composition\ServiceProviderExtensions.cs" />
     <Compile Include="Composition\TestDoublesContainerBuilder.cs" />
+    <Compile Include="IntegrationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="Xunit.Extensions\ClassData.cs" />

@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Oryza.Infrastructure.Tests.DataAccess
 {
-    public class SnapshotRepositoryTest : Test
+    public class SnapshotRepositoryTest : IntegrationTest
     {
         [Fact]
         public void Store_ASnapshot_StoresWithoutException()
@@ -14,13 +14,7 @@ namespace Oryza.Infrastructure.Tests.DataAccess
             // arrange
             var snapshotRepository = _serviceProvider.GetService<ISnapshotRepository>();
             var priceTable = File.ReadAllText("oryza_price_table.txt");
-            
             var snapshot = _serviceProvider.GetService<IPriceTableExtractor>().ExtractPriceTable(priceTable);
-            snapshot.RawData = File.ReadAllText("oryza_web_page.txt");
-            snapshot.PriceUnit = _serviceProvider.GetService<IPriceUnitExtractor>().ExtractPriceUnit(priceTable);
-            snapshot.PublishDate = _serviceProvider.GetService<IDateExtractor>().ExtractDate(priceTable);
-
-            TruncateDatabase();
 
             // act
             snapshotRepository.Store(snapshot);
