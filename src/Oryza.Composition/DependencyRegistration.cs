@@ -1,6 +1,7 @@
 ﻿using System;
 using Oryza.Infrastructure.Capture;
 using Oryza.Infrastructure.Configuration;
+using Oryza.Infrastructure.DataAccess;
 using Oryza.Infrastructure.Extract;
 using Oryza.Infrastructure.Parsing;
 using Oryza.ServiceInterfaces;
@@ -35,6 +36,9 @@ namespace Oryza.Composition
             container.AddRegistration(typeof (ICategoryNameMatcher), priceTableExtractorRegistration);
             container.AddRegistration(typeof (IEntryNameConverter), priceTableExtractorRegistration);
             container.AddRegistration(typeof (IEntryNameMatcher), priceTableExtractorRegistration);
+
+            // Oryza.DataAccess
+            container.Register<ISnapshotRepository, SnapshotRepository>();
 
             // Packages
             container.Register<IRestClient>(() => new RestClient());

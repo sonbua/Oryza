@@ -1,7 +1,8 @@
 ﻿using System;
 using Oryza.TestBase.Composition;
+using Raven.Abstractions.Data;
+using Raven.Client;
 using Raven.Client.Document;
-using Raven.Client.Embedded;
 using SimpleInjector;
 
 namespace Oryza.TestBase
@@ -25,11 +26,23 @@ namespace Oryza.TestBase
 
         private static void EmbeddableDocumentStoreRegistration(Container container)
         {
-            container.RegisterSingle(() => new DocumentStore
-                                           {
-                                               Url = "http://localhost:8080",
-                                               DefaultDatabase = "oryzatest"
-                                           }.Initialize());
+            container.RegisterSingle<IDocumentStore>(() => new DocumentStore
+                                                           {
+                                                               Url = "http://localhost:8080",
+                                                               DefaultDatabase = "oryzatest"
+                                                           }.Initialize());
+
+            container.Register<IDocumentSession>(() => container.GetInstance<IDocumentStore>().OpenSession());
+        }
+
+        protected void TruncateDatabase()
+        {
+            var documentStore = _serviceProvider.GetService<IDocumentStore>();
+            var indexDefinitions = documentStore.DatabaseCommands.GetIndexes(0, 100);
+            foreach (var indexDefinition in indexDefinitions)
+            {
+                documentStore.DatabaseCommands.DeleteByIndex(indexDefinition.Name, new IndexQuery());
+            }
         }
     }
 }

@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Capture\WebCapture.cs" />
     <Compile Include="Configuration\OryzaConfiguration.cs" />
+    <Compile Include="DataAccess\SnapshotRepository.cs" />
     <Compile Include="Extract\PriceTableExtractor.cs" />
     <Compile Include="Parsing\PriceTableParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

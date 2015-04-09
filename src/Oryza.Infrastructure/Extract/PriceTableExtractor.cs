@@ -21,61 +21,9 @@ namespace Oryza.Infrastructure.Extract
 
         public Snapshot ExtractPriceTable(string priceTable)
         {
-            //            using (var session = _documentStore.OpenSession())
-            //            {
-            //                var existingCategoryTypes = session.Query<CategoryType>().ToList();
-            //                var existingEntryTypes = session.Query<EntryType>().ToList();
-            //
-            //                foreach (var category in snapshot.Categories)
-            //                {
-            //                    CategoryType matchCategoryType;
-            //
-            //                    if (TryMatchCategoryName(category.Name, existingCategoryTypes, this, out matchCategoryType))
-            //                    {
-            //                        if (!matchCategoryType.NameVariants.Contains(category.Name))
-            //                        {
-            //                            matchCategoryType.NameVariants.Add(category.Name);
-            //                        }
-            //                    }
-            //                    else
-            //                    {
-            //                        existingCategoryTypes.Add(new CategoryType
-            //                                                  {
-            //                                                      Name = ConvertCategoryName(category.Name),
-            //                                                      NameVariants = new List<string> {category.Name}
-            //                                                  });
-            //                    }
-            //
-            //                    foreach (var entry in category.Entries)
-            //                    {
-            //                        EntryType matchEntryType;
-            //
-            //                        if (TryMatchEntryName(entry.Name, existingEntryTypes, this, out matchEntryType))
-            //                        {
-            //                            if (!matchEntryType.NameVariants.Contains(entry.Name))
-            //                            {
-            //                                matchEntryType.NameVariants.Add(entry.Name);
-            //                            }
-            //                        }
-            //                        else
-            //                        {
-            //                            existingEntryTypes.Add(new EntryType
-            //                                                   {
-            //                                                       Name = ConvertEntryName(entry.Name),
-            //                                                       NameVariants = new List<string> {entry.Name}
-            //                                                   });
-            //                        }
-            //                    }
-            //                }
-            //
-            //                session.BatchStore(existingCategoryTypes);
-            //                session.BatchStore(existingEntryTypes);
-            //
-            //                session.SaveChanges();
-            //            }
-
             return new Snapshot
                    {
+                       PriceTableData = priceTable,
                        PriceUnit = ExtractPriceUnit(priceTable),
                        PublishDate = ExtractDate(priceTable),
                        Categories = ExtractCategories(priceTable).ToList()

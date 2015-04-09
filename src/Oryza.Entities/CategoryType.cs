@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Oryza.Entities
 {
-    public class CategoryType
+    public class CategoryType : IEntity
     {
         public long Id { get; set; }
 

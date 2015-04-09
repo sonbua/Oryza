@@ -45,6 +45,7 @@
     <Compile Include="IPriceTableExtractor.cs" />
     <Compile Include="IPriceTableParser.cs" />
     <Compile Include="IPriceUnitExtractor.cs" />
+    <Compile Include="ISnapshotRepository.cs" />
     <Compile Include="IWebCapture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
