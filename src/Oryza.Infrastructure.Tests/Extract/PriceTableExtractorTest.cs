@@ -172,6 +172,7 @@ namespace Oryza.Infrastructure.Tests.Extract
             var snapshot = priceTableExtractor.ExtractPriceTable(_priceTable);
 
             // assert
+            Assert.Equal(_priceTable, snapshot.PriceTableData);
             Assert.Equal(new DateTime(2015, 3, 30), snapshot.PublishDate);
             Assert.Equal(6, snapshot.Categories.Count);
             Assert.Equal("USD per ton", snapshot.PriceUnit);
