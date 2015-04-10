@@ -79,20 +79,20 @@ namespace Oryza.Infrastructure.DataAccess
                 }
             }
 
+            _session.BatchStore(existingEntryTypes);
+            _session.BatchStore(existingCategoryTypes);
+
             foreach (var category in snapshot.Categories)
             {
                 foreach (var entry in category.Entries)
                 {
-                    _session.StoreWithMetadata(entry);
+                    _session.Store(entry);
                 }
 
-                _session.StoreWithMetadata(category);
+                _session.Store(category);
             }
 
-            _session.BatchStoreWithMetadata(existingEntryTypes);
-            _session.BatchStoreWithMetadata(existingCategoryTypes);
-
-            _session.StoreWithMetadata(snapshot);
+            _session.Store(snapshot);
 
             _session.SaveChanges();
         }
