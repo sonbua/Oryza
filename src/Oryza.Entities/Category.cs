@@ -4,6 +4,13 @@ namespace Oryza.Entities
 {
     public class Category : IEntity
     {
+        public Category()
+        {
+            Name = string.Empty;
+            Type = new CategoryType();
+            Entries = new List<Entry>();
+        }
+
         public long Id { get; set; }
 
         public string Name { get; set; }
@@ -11,7 +18,5 @@ namespace Oryza.Entities
         public CategoryType Type { get; set; }
 
         public ICollection<Entry> Entries { get; set; }
-
-        public Metadata Metadata { get; set; }
     }
 }

@@ -8,6 +8,14 @@ namespace Oryza.Entities
     /// </summary>
     public class Snapshot : IEntity
     {
+        public Snapshot()
+        {
+            Categories = new List<Category>();
+            PriceUnit = string.Empty;
+            RawData = string.Empty;
+            PriceTableData = string.Empty;
+        }
+
         public long Id { get; set; }
 
         public ICollection<Category> Categories { get; set; }
@@ -31,7 +39,5 @@ namespace Oryza.Entities
         /// Holds price table in HTML, that are necessarily ready for analysis.
         /// </summary>
         public string PriceTableData { get; set; }
-
-        public Metadata Metadata { get; set; }
     }
 }
