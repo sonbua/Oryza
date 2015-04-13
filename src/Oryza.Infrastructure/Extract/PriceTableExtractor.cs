@@ -142,8 +142,7 @@ namespace Oryza.Infrastructure.Extract
                     return true;
                 }
 
-                if (categoryType.Name == newCategoryTypeName ||
-                    categoryType.Name.EqualsIgnoreCase(newCategoryTypeName))
+                if (categoryType.Name.EqualsIgnoreCase(newCategoryTypeName))
                 {
                     match = categoryType;
                     return true;
@@ -211,8 +210,7 @@ namespace Oryza.Infrastructure.Extract
                     return true;
                 }
 
-                if (entryType.Name == newEntryTypeName ||
-                    entryType.Name.EqualsIgnoreCase(newEntryTypeName))
+                if (entryType.Name.EqualsIgnoreCase(newEntryTypeName))
                 {
                     match = entryType;
                     return true;
