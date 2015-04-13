@@ -191,21 +191,14 @@ namespace Oryza.Infrastructure.Tests.Extract
 
                 yield return new object[]
                              {
-                                 "Long grain white rice - high quality",
-                                 new List<CategoryType> {new CategoryType {NameVariants = new List<string> {"Long grain white rice - high quality"}}},
+                                 "Long   grain   white   rice   -   high   quality",
+                                 new List<CategoryType> {new CategoryType {Name = "LongGrainWhiteRiceHighQuality", NameVariants = new List<string> {"Long grain white rice - high quality"}}},
                                  true
                              };
 
                 yield return new object[]
                              {
-                                 "Long   grain   white   rice   -   high   quality",
-                                 new List<CategoryType> {new CategoryType {NameVariants = new List<string> {"Long grain white rice - high quality"}}},
-                                 false
-                             };
-
-                yield return new object[]
-                             {
-                                 "Long   grain   white   rice   -   high   quality",
+                                 "LONG   GRAIN   WHITE   RICE   -   HIGH   QUALITY",
                                  new List<CategoryType> {new CategoryType {Name = "LongGrainWhiteRiceHighQuality", NameVariants = new List<string> {"Long grain white rice - high quality"}}},
                                  true
                              };
@@ -237,21 +230,14 @@ namespace Oryza.Infrastructure.Tests.Extract
 
                 yield return new object[]
                              {
-                                 "Thailand 100% B grade",
-                                 new List<EntryType> {new EntryType {NameVariants = new List<string> {"Thailand 100% B grade"}}},
+                                 "Thailand   100%   B   grade",
+                                 new List<EntryType> {new EntryType {Name = "Thailand100percentBGrade", NameVariants = new List<string> {"Thailand 100% B grade"}}},
                                  true
                              };
 
                 yield return new object[]
                              {
-                                 "Thailand   100%   B   grade",
-                                 new List<EntryType> {new EntryType {NameVariants = new List<string> {"Thailand 100% B grade"}}},
-                                 false
-                             };
-
-                yield return new object[]
-                             {
-                                 "Thailand   100%   B   grade",
+                                 "THAILAND   100%   B   GRADE",
                                  new List<EntryType> {new EntryType {Name = "Thailand100percentBGrade", NameVariants = new List<string> {"Thailand 100% B grade"}}},
                                  true
                              };

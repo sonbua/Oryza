@@ -29,5 +29,20 @@ namespace Oryza.Utility
 
             return string.Join(string.Empty, source);
         }
+
+        public static bool EqualsIgnoreCase(this string source, string target)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            if (target == null)
+            {
+                throw new ArgumentNullException("target");
+            }
+
+            return source.Equals(target, StringComparison.InvariantCultureIgnoreCase);
+        }
     }
 }
