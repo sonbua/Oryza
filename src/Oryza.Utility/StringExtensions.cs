@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 
+using HtmlAgilityPack;
+
 namespace Oryza.Utility
 {
     public static class StringExtensions
@@ -43,6 +45,15 @@ namespace Oryza.Utility
             }
 
             return source.Equals(target, StringComparison.InvariantCultureIgnoreCase);
+        }
+
+        public static HtmlDocument ToHtmlDocument(this string html)
+        {
+            var htmlDocument = new HtmlDocument();
+            
+            htmlDocument.LoadHtml(html);
+
+            return htmlDocument;
         }
     }
 }

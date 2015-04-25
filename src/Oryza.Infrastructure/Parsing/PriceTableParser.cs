@@ -1,5 +1,5 @@
-using HtmlAgilityPack;
 using Oryza.ServiceInterfaces;
+using Oryza.Utility;
 
 namespace Oryza.Infrastructure.Parsing
 {
@@ -19,13 +19,10 @@ namespace Oryza.Infrastructure.Parsing
         /// <returns></returns>
         public string Parse(string html)
         {
-            var htmlDocument = new HtmlDocument();
-
-            htmlDocument.LoadHtml(html);
-
-            return htmlDocument.DocumentNode
-                               .SelectSingleNode(_configuration.PriceTableXPath)
-                               .OuterHtml;
+            return html.ToHtmlDocument()
+                       .DocumentNode
+                       .SelectSingleNode(_configuration.PriceTableXPath)
+                       .OuterHtml;
         }
     }
 }

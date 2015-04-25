@@ -32,13 +32,10 @@ namespace Oryza.Infrastructure.Extract
 
         public DateTime ExtractDate(string priceTable)
         {
-            var htmlDocument = new HtmlDocument();
-
-            htmlDocument.LoadHtml(priceTable);
-
-            var dateString = htmlDocument.DocumentNode
-                                         .SelectSingleNode(_configuration.PublishDateXPath)
-                                         .InnerText;
+            var dateString = priceTable.ToHtmlDocument()
+                                       .DocumentNode
+                                       .SelectSingleNode(_configuration.PublishDateXPath)
+                                       .InnerText;
 
             dateString = Regex.Replace(dateString, "(st|nd|rd|th),", ",");
 
@@ -47,13 +44,10 @@ namespace Oryza.Infrastructure.Extract
 
         public string ExtractPriceUnit(string priceTable)
         {
-            var htmlDocument = new HtmlDocument();
-
-            htmlDocument.LoadHtml(priceTable);
-
-            var footer = htmlDocument.DocumentNode
-                                     .SelectSingleNode(_configuration.PriceUnitXPath)
-                                     .InnerText;
+            var footer = priceTable.ToHtmlDocument()
+                                   .DocumentNode
+                                   .SelectSingleNode(_configuration.PriceUnitXPath)
+                                   .InnerText;
 
             return _configuration.DefaultPriceUnits
                                  .First(x => Regex.IsMatch(footer, x, RegexOptions.IgnoreCase));
@@ -61,13 +55,10 @@ namespace Oryza.Infrastructure.Extract
 
         public IEnumerable<Category> ExtractCategories(string priceTable)
         {
-            var htmlDocument = new HtmlDocument();
-
-            htmlDocument.LoadHtml(priceTable);
-
-            return htmlDocument.DocumentNode
-                               .SelectNodes(_configuration.CategoriesXPath)
-                               .Select(ExtractCategory);
+            return priceTable.ToHtmlDocument()
+                             .DocumentNode
+                             .SelectNodes(_configuration.CategoriesXPath)
+                             .Select(ExtractCategory);
         }
 
         private Category ExtractCategory(HtmlNode categoryTable)
