@@ -20,7 +20,7 @@ namespace Oryza.Composition
             container.Register<IWebCapture, WebCapture>();
 
             // Oryza.Configuration
-            container.Register<IConfiguration, OryzaConfiguration>();
+            container.RegisterSingle<IConfiguration, OryzaConfiguration>();
 
             // Oryza.Parsing
             container.Register<IPriceTableParser, PriceTableParser>();

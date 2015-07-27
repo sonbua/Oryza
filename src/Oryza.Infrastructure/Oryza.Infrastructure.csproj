@@ -53,10 +53,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Capture\WebCapture.cs" />
+    <Compile Include="Capture\WebCaptureBlock.cs" />
     <Compile Include="Configuration\OryzaConfiguration.cs" />
     <Compile Include="DataAccess\SnapshotRepository.cs" />
+    <Compile Include="DataAccess\SnapshotRepositoryBlock.cs" />
+    <Compile Include="Extract\CategoriesExtractorBlock.cs" />
+    <Compile Include="Extract\DateExtractorBlock.cs" />
+    <Compile Include="Extract\ExtractBlock.cs" />
     <Compile Include="Extract\PriceTableExtractor.cs" />
+    <Compile Include="Extract\PriceUnitExtractorBlock.cs" />
+    <Compile Include="Extract\SnapshotInitializationBlock.cs" />
+    <Compile Include="OryzaCrawlerBlock.cs" />
     <Compile Include="Parsing\PriceTableParser.cs" />
+    <Compile Include="Parsing\PriceTableParserBlock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +73,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\LegoBuildingBlock\LegoBuildingBlock.csproj">
+      <Project>{873F2146-DE94-426B-8533-4A00925751DD}</Project>
+      <Name>LegoBuildingBlocks</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Oryza.Entities\Oryza.Entities.csproj">
       <Project>{68f4d43b-3340-42f6-bf04-8060e7909567}</Project>
       <Name>Oryza.Entities</Name>

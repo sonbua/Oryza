@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Capture\WebCaptureTest.cs" />
+    <Compile Include="DataAccess\SnapshotRepositoryBlockTest.cs" />
     <Compile Include="DataAccess\SnapshotRepositoryTest.cs" />
     <Compile Include="Extract\PriceTableExtractorTest.cs" />
     <Compile Include="Parsing\PriceTableParserTest.cs" />
@@ -65,9 +66,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LegoBuildingBlock\LegoBuildingBlock.csproj">
+      <Project>{873F2146-DE94-426B-8533-4A00925751DD}</Project>
+      <Name>LegoBuildingBlock</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Oryza.Entities\Oryza.Entities.csproj">
       <Project>{68f4d43b-3340-42f6-bf04-8060e7909567}</Project>
       <Name>Oryza.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Oryza.Infrastructure\Oryza.Infrastructure.csproj">
+      <Project>{01D37C44-2FFE-48E7-A1D8-07D9F0EC72BF}</Project>
+      <Name>Oryza.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\Oryza.ServiceInterfaces\Oryza.ServiceInterfaces.csproj">
       <Project>{3d397228-7f9e-4c6d-a2b0-2b72f247454c}</Project>

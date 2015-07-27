@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.Entities", "Oryza.Entities\Oryza.Entities.csproj", "{68F4D43B-3340-42F6-BF04-8060E7909567}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.Composition", "Oryza.Composition\Oryza.Composition.csproj", "{F42A21F7-6232-4D18-8619-596F820A2CB4}"
@@ -14,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.Infrastructure", "Oryza.Infrastructure\Oryza.Infrastructure.csproj", "{01D37C44-2FFE-48E7-A1D8-07D9F0EC72BF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryza.Infrastructure.Tests", "Oryza.Infrastructure.Tests\Oryza.Infrastructure.Tests.csproj", "{A7061358-D173-43B6-89A3-F4603F9F92F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegoBuildingBlock", "LegoBuildingBlock\LegoBuildingBlock.csproj", "{873F2146-DE94-426B-8533-4A00925751DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +53,10 @@ Global
 		{A7061358-D173-43B6-89A3-F4603F9F92F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7061358-D173-43B6-89A3-F4603F9F92F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7061358-D173-43B6-89A3-F4603F9F92F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{873F2146-DE94-426B-8533-4A00925751DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{873F2146-DE94-426B-8533-4A00925751DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{873F2146-DE94-426B-8533-4A00925751DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{873F2146-DE94-426B-8533-4A00925751DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
