@@ -13,12 +13,12 @@ namespace Oryza.Infrastructure.Tests.DataAccess
         public void ASnapshot_StoresWithoutException()
         {
             // arrange
-            var snapshotRepository = _serviceProvider.GetService<SnapshotRepositoryBlock>();
+            var snapshotRepositoryBlock = _serviceProvider.GetService<SnapshotRepositoryBlock>();
             var priceTable = File.ReadAllText("oryza_price_table.txt");
             var snapshot = _serviceProvider.GetService<ExtractBlock>().Work(priceTable);
 
             // act
-            snapshotRepository.Work(snapshot);
+            snapshotRepositoryBlock.Work(snapshot);
 
             // assert
         }

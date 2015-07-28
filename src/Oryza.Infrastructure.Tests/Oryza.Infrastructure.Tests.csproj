@@ -59,6 +59,7 @@
     <Compile Include="DataAccess\SnapshotRepositoryBlockTest.cs" />
     <Compile Include="DataAccess\SnapshotRepositoryTest.cs" />
     <Compile Include="Extract\PriceTableExtractorTest.cs" />
+    <Compile Include="OryzaCrawlerBlockTest.cs" />
     <Compile Include="Parsing\PriceTableParserTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
