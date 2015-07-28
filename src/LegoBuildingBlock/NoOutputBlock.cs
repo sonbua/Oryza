@@ -2,7 +2,7 @@
 
 namespace LegoBuildingBlock
 {
-    public class EmptyBlock<TInput> : IBlock<TInput, Nothing>
+    public class NoOutputBlock<TInput> : IBlock<TInput, Nothing>
     {
         public Func<TInput, Nothing> Handle
         {

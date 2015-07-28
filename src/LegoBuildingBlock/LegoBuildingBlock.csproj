@@ -37,7 +37,7 @@
   <ItemGroup>
     <Compile Include="CpuBoundTaskBlock.cs" />
     <Compile Include="BlockExtensions.cs" />
-    <Compile Include="EmptyBlock.cs" />
+    <Compile Include="NoOutputBlock.cs" />
     <Compile Include="IBlock.cs" />
     <Compile Include="Nothing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

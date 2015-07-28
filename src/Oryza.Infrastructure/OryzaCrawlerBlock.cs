@@ -19,8 +19,7 @@ namespace Oryza.Infrastructure
             _thisBlock = webCaptureAsyncBlock.ContinuesWith(new ResultSynchronizationBlock<string>())
                                              .ContinuesWith(priceTableParserBlock)
                                              .ContinuesWith(extractBlock)
-                                             .ContinuesWith(snapshotRepositoryBlock)
-                                             .ContinuesWith(new EmptyBlock<Nothing>());
+                                             .ContinuesWith(snapshotRepositoryBlock);
         }
 
         public Func<Uri, Nothing> Handle
