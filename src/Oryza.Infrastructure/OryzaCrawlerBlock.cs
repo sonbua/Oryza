@@ -21,11 +21,9 @@ namespace Oryza.Infrastructure
                                         .ContinuesWith(snapshotRepositoryBlock);
         }
 
-        public Uri Input { get; set; }
-
-        public Func<Uri, Nothing> Work
+        public Func<Uri, Nothing> Handle
         {
-            get { return uri => _thisBlock.Work(uri); }
+            get { return uri => _thisBlock.Handle(uri); }
         }
     }
 }

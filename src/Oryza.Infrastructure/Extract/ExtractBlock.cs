@@ -18,11 +18,9 @@ namespace Oryza.Infrastructure.Extract
                                                     .ContinuesWith(categoriesExtractorBlock);
         }
 
-        public string Input { get; set; }
-
-        public Func<string, Snapshot> Work
+        public Func<string, Snapshot> Handle
         {
-            get { return priceTable => _thisBlock.Work(priceTable); }
+            get { return priceTable => _thisBlock.Handle(priceTable); }
         }
     }
 }

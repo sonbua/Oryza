@@ -14,9 +14,7 @@ namespace Oryza.Infrastructure.Parsing
             _configuration = configuration;
         }
 
-        public string Input { get; set; }
-
-        public Func<string, string> Work
+        public Func<string, string> Handle
         {
             get
             {

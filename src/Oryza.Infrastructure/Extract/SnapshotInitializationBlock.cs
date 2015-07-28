@@ -6,9 +6,7 @@ namespace Oryza.Infrastructure.Extract
 {
     public class SnapshotInitializationBlock : IBlock<string, Snapshot>
     {
-        public string Input { get; set; }
-
-        public Func<string, Snapshot> Work
+        public Func<string, Snapshot> Handle
         {
             get { return priceTable => new Snapshot {PriceTableData = priceTable}; }
         }

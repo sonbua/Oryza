@@ -13,9 +13,7 @@ namespace Oryza.Infrastructure.Capture
             _restClient = restClient;
         }
 
-        public Uri Input { get; set; }
-
-        public Func<Uri, string> Work
+        public Func<Uri, string> Handle
         {
             get
             {

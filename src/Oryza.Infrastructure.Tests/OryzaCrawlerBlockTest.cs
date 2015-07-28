@@ -20,7 +20,7 @@ namespace Oryza.Infrastructure.Tests
             var priceTable = File.ReadAllText("oryza_web_page.txt");
 
             // act
-            oryzaCrawlerWithoutWebCaptureBlock.Work(priceTable);
+            oryzaCrawlerWithoutWebCaptureBlock.Handle(priceTable);
 
             // assert
         }
@@ -38,11 +38,9 @@ namespace Oryza.Infrastructure.Tests
                                               .ContinuesWith(snapshotRepositoryBlock);
         }
 
-        public string Input { get; set; }
-
-        public Func<string, Nothing> Work
+        public Func<string, Nothing> Handle
         {
-            get { return html => _thisBlock.Work(html); }
+            get { return html => _thisBlock.Handle(html); }
         }
     }
 }

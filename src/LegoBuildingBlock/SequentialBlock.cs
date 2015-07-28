@@ -2,7 +2,7 @@
 
 namespace LegoBuildingBlock
 {
-    public class SequentialBlock<TInput, TMiddle, TOutput> : IBlock<TInput, TOutput>
+    internal class SequentialBlock<TInput, TMiddle, TOutput> : IBlock<TInput, TOutput>
     {
         private readonly IBlock<TInput, TMiddle> _firstBlock;
         private readonly IBlock<TMiddle, TOutput> _nextBlock;
@@ -13,21 +13,15 @@ namespace LegoBuildingBlock
             _nextBlock = nextBlock;
         }
 
-        public TInput Input
-        {
-            get { return _firstBlock.Input; }
-            set { _firstBlock.Input = value; }
-        }
-
-        public Func<TInput, TOutput> Work
+        public Func<TInput, TOutput> Handle
         {
             get
             {
                 return input =>
                        {
-                           _nextBlock.Input = _firstBlock.Work(input);
+                           var temp = _firstBlock.Handle(input);
 
-                           return _nextBlock.Work(_nextBlock.Input);
+                           return _nextBlock.Handle(temp);
                        };
             }
         }

@@ -26,9 +26,7 @@ namespace Oryza.Infrastructure.DataAccess
             _entryNameConverter = entryNameConverter;
         }
 
-        public Snapshot Input { get; set; }
-
-        public Func<Snapshot, Nothing> Work
+        public Func<Snapshot, Nothing> Handle
         {
             get
             {

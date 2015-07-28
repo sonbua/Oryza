@@ -18,20 +18,18 @@ namespace Oryza.Infrastructure.Extract
             _configuration = configuration;
         }
 
-        public Snapshot Input { get; set; }
-
-        public Func<Snapshot, Snapshot> Work
+        public Func<Snapshot, Snapshot> Handle
         {
             get
             {
                 return snapshot =>
                        {
-                           snapshot.Categories = Input.PriceTableData
-                                                      .ToHtmlDocument()
-                                                      .DocumentNode
-                                                      .SelectNodes(_configuration.CategoriesXPath)
-                                                      .Select(ExtractCategory)
-                                                      .ToList();
+                           snapshot.Categories = snapshot.PriceTableData
+                                                         .ToHtmlDocument()
+                                                         .DocumentNode
+                                                         .SelectNodes(_configuration.CategoriesXPath)
+                                                         .Select(ExtractCategory)
+                                                         .ToList();
 
                            return snapshot;
                        };

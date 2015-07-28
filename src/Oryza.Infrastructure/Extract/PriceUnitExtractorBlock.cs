@@ -17,9 +17,7 @@ namespace Oryza.Infrastructure.Extract
             _configuration = configuration;
         }
 
-        public Snapshot Input { get; set; }
-
-        public Func<Snapshot, Snapshot> Work
+        public Func<Snapshot, Snapshot> Handle
         {
             get
             {
