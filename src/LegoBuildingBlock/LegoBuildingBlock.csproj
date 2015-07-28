@@ -37,7 +37,7 @@
   <ItemGroup>
     <Compile Include="BaseBlock.cs" />
     <Compile Include="BlockExtensions.cs" />
-    <Compile Include="DoNothingBlock.cs" />
+    <Compile Include="EmptyBlock.cs" />
     <Compile Include="IBlock.cs" />
     <Compile Include="Nothing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
