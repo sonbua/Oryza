@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Capture\WebCapture.cs" />
+    <Compile Include="Capture\WebCaptureAsyncBlock.cs" />
     <Compile Include="Capture\WebCaptureBlock.cs" />
     <Compile Include="Configuration\OryzaConfiguration.cs" />
     <Compile Include="DataAccess\SnapshotRepository.cs" />

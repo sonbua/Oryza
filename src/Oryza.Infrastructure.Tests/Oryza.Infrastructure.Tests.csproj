@@ -55,6 +55,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Capture\WebCaptureAsyncBlockTest.cs" />
+    <Compile Include="Capture\WebCaptureBlockTest.cs" />
     <Compile Include="Capture\WebCaptureTest.cs" />
     <Compile Include="DataAccess\SnapshotRepositoryBlockTest.cs" />
     <Compile Include="DataAccess\SnapshotRepositoryTest.cs" />

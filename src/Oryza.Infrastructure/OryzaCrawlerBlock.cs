@@ -11,14 +11,16 @@ namespace Oryza.Infrastructure
     {
         private readonly IBlock<Uri, Nothing> _thisBlock;
 
-        public OryzaCrawlerBlock(WebCaptureBlock webCaptureBlock,
+        public OryzaCrawlerBlock(WebCaptureAsyncBlock webCaptureAsyncBlock,
                                  PriceTableParserBlock priceTableParserBlock,
                                  ExtractBlock extractBlock,
                                  SnapshotRepositoryBlock snapshotRepositoryBlock)
         {
-            _thisBlock = webCaptureBlock.ContinuesWith(priceTableParserBlock)
-                                        .ContinuesWith(extractBlock)
-                                        .ContinuesWith(snapshotRepositoryBlock);
+            _thisBlock = webCaptureAsyncBlock.ContinuesWith(new ResultSynchronizationBlock<string>())
+                                             .ContinuesWith(priceTableParserBlock)
+                                             .ContinuesWith(extractBlock)
+                                             .ContinuesWith(snapshotRepositoryBlock)
+                                             .ContinuesWith(new EmptyBlock<Nothing>());
         }
 
         public Func<Uri, Nothing> Handle
