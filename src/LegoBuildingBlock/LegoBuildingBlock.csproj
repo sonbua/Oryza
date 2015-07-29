@@ -35,6 +35,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Block.cs" />
     <Compile Include="CpuBoundTaskBlock.cs" />
     <Compile Include="BlockExtensions.cs" />
     <Compile Include="NoOutputBlock.cs" />
