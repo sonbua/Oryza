@@ -9,7 +9,7 @@ namespace Oryza.Infrastructure.Tests.Capture
     public class WebCaptureBlockTest : Test
     {
         [Fact]
-        public void CaptureAsync_CaptureOryzaWebPage_HasOryzaString()
+        public void CaptureOryzaWebPage_HasOryzaString()
         {
             // arrange
             var webCaptureBlock = _serviceProvider.GetService<WebCaptureBlock>();
