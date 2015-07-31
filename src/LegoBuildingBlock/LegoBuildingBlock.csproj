@@ -41,8 +41,12 @@
     <Compile Include="ControlStructure\ResultSynchronizationBlock.cs" />
     <Compile Include="ControlStructure\SequentialBlock.cs" />
     <Compile Include="BlockExtensions.cs" />
+    <Compile Include="Linq\AllBlock.cs" />
+    <Compile Include="Linq\AnyBlock.cs" />
+    <Compile Include="Linq\SelectBlock.cs" />
     <Compile Include="Linq\SelectManyBlock.cs" />
     <Compile Include="Linq\ToArrayBlock.cs" />
+    <Compile Include="Linq\WhereBlock.cs" />
     <Compile Include="Match.cs" />
     <Compile Include="NoOutputBlock.cs" />
     <Compile Include="IBlock.cs" />
