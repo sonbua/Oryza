@@ -57,14 +57,13 @@
   <ItemGroup>
     <Compile Include="Capture\WebCaptureAsyncBlockTest.cs" />
     <Compile Include="Capture\WebCaptureBlockTest.cs" />
-    <Compile Include="Capture\WebCaptureTest.cs" />
+    <Compile Include="DataAccess\NameToTypeConverterBlockTest.cs" />
     <Compile Include="DataAccess\SnapshotRepositoryBlockTest.cs" />
-    <Compile Include="DataAccess\SnapshotRepositoryTest.cs" />
+    <Compile Include="DataAccess\CategoryNameMatcherBlockTest.cs" />
+    <Compile Include="DataAccess\EntryNameMatcherBlockTest.cs" />
     <Compile Include="Extract\ExtractBlockTest.cs" />
-    <Compile Include="Extract\PriceTableExtractorTest.cs" />
     <Compile Include="OryzaCrawlerBlockTest.cs" />
     <Compile Include="Parsing\PriceTableParserBlockTest.cs" />
-    <Compile Include="Parsing\PriceTableParserTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

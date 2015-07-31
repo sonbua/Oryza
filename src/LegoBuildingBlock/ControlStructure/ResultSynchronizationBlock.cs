@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace LegoBuildingBlock
+namespace LegoBuildingBlock.ControlStructure
 {
     public class ResultSynchronizationBlock<TOutput> : IBlock<Task<TOutput>, TOutput>
     {

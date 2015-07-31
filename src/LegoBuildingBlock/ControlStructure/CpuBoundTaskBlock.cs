@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace LegoBuildingBlock
+namespace LegoBuildingBlock.ControlStructure
 {
     internal class CpuBoundTaskBlock<TInput, TOutput> : IBlock<TInput, Task<TOutput>>
     {

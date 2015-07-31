@@ -1,5 +1,6 @@
 ﻿using System;
 using LegoBuildingBlock;
+using LegoBuildingBlock.ControlStructure;
 using Oryza.Infrastructure.Capture;
 using Oryza.Infrastructure.DataAccess;
 using Oryza.Infrastructure.Extract;
@@ -9,22 +10,15 @@ namespace Oryza.Infrastructure
 {
     public class OryzaCrawlerBlock : IBlock<Uri, Nothing>
     {
-        private readonly IBlock<Uri, Nothing> _thisBlock;
-
-        public OryzaCrawlerBlock(WebCaptureAsyncBlock webCaptureAsyncBlock,
-                                 PriceTableParserBlock priceTableParserBlock,
-                                 ExtractBlock extractBlock,
-                                 SnapshotRepositoryBlock snapshotRepositoryBlock)
+        public OryzaCrawlerBlock(WebCaptureAsyncBlock webCaptureAsyncBlock, PriceTableParserBlock priceTableParserBlock, ExtractBlock extractBlock, SnapshotRepositoryBlock snapshotRepositoryBlock)
         {
-            _thisBlock = webCaptureAsyncBlock.ContinuesWith(new ResultSynchronizationBlock<string>())
-                                             .ContinuesWith(priceTableParserBlock)
-                                             .ContinuesWith(extractBlock)
-                                             .ContinuesWith(snapshotRepositoryBlock);
+            Handle = uri => webCaptureAsyncBlock.ContinuesWith(new ResultSynchronizationBlock<string>())
+                                                .ContinuesWith(priceTableParserBlock)
+                                                .ContinuesWith(extractBlock)
+                                                .ContinuesWith(snapshotRepositoryBlock)
+                                                .Handle(uri);
         }
 
-        public Func<Uri, Nothing> Handle
-        {
-            get { return uri => _thisBlock.Handle(uri); }
-        }
+        public Func<Uri, Nothing> Handle { get; private set; }
     }
 }

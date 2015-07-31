@@ -7,26 +7,18 @@ namespace Oryza.Infrastructure.Capture
 {
     public class WebCaptureAsyncBlock : IBlock<Uri, Task<string>>
     {
-        private readonly IRestClient _restClient;
-
         public WebCaptureAsyncBlock(IRestClient restClient)
         {
-            _restClient = restClient;
+            Handle = async uri =>
+                           {
+                               restClient.BaseUrl = uri;
+
+                               var restResponse = await restClient.ExecuteGetTaskAsync(new RestRequest());
+
+                               return restResponse.Content;
+                           };
         }
 
-        public Func<Uri, Task<string>> Handle
-        {
-            get
-            {
-                return async uri =>
-                             {
-                                 _restClient.BaseUrl = uri;
-
-                                 var restResponse = await _restClient.ExecuteGetTaskAsync(new RestRequest());
-
-                                 return restResponse.Content;
-                             };
-            }
-        }
+        public Func<Uri, Task<string>> Handle { get; private set; }
     }
 }

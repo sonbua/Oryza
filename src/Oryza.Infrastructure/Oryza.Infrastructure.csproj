@@ -52,20 +52,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Capture\WebCapture.cs" />
     <Compile Include="Capture\WebCaptureAsyncBlock.cs" />
     <Compile Include="Capture\WebCaptureBlock.cs" />
     <Compile Include="Configuration\OryzaConfiguration.cs" />
-    <Compile Include="DataAccess\SnapshotRepository.cs" />
+    <Compile Include="DataAccess\NameToTypeConverterBlock.cs" />
     <Compile Include="DataAccess\SnapshotRepositoryBlock.cs" />
+    <Compile Include="DataAccess\CategoryNameMatcherBlock.cs" />
+    <Compile Include="DataAccess\EntryNameMatcherBlock.cs" />
     <Compile Include="Extract\CategoriesExtractorBlock.cs" />
     <Compile Include="Extract\DateExtractorBlock.cs" />
     <Compile Include="Extract\ExtractBlock.cs" />
-    <Compile Include="Extract\PriceTableExtractor.cs" />
     <Compile Include="Extract\PriceUnitExtractorBlock.cs" />
     <Compile Include="Extract\SnapshotInitializationBlock.cs" />
     <Compile Include="OryzaCrawlerBlock.cs" />
-    <Compile Include="Parsing\PriceTableParser.cs" />
     <Compile Include="Parsing\PriceTableParserBlock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

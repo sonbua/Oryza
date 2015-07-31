@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using LegoBuildingBlock;
 using Oryza.Entities;
-using Oryza.ServiceInterfaces;
 using Oryza.Utility;
 using Raven.Client;
 
@@ -12,18 +11,16 @@ namespace Oryza.Infrastructure.DataAccess
     public class SnapshotRepositoryBlock : IBlock<Snapshot, Nothing>
     {
         private readonly IDocumentSession _session;
-        private readonly ICategoryNameMatcher _categoryNameMatcher;
-        private readonly ICategoryNameConverter _categoryNameConverter;
-        private readonly IEntryNameMatcher _entryNameMatcher;
-        private readonly IEntryNameConverter _entryNameConverter;
+        private readonly NameToTypeConverterBlock _nameToTypeConverterBlock;
+        private readonly CategoryNameMatcherBlock _categoryNameMatcherMatcher;
+        private readonly EntryNameMatcherBlock _entryNameMatcherMatcher;
 
-        public SnapshotRepositoryBlock(IDocumentSession session, ICategoryNameMatcher categoryNameMatcher, ICategoryNameConverter categoryNameConverter, IEntryNameMatcher entryNameMatcher, IEntryNameConverter entryNameConverter)
+        public SnapshotRepositoryBlock(IDocumentSession session, NameToTypeConverterBlock nameToTypeConverterBlock, CategoryNameMatcherBlock categoryNameMatcherMatcher, EntryNameMatcherBlock entryNameMatcherMatcher)
         {
             _session = session;
-            _categoryNameMatcher = categoryNameMatcher;
-            _categoryNameConverter = categoryNameConverter;
-            _entryNameMatcher = entryNameMatcher;
-            _entryNameConverter = entryNameConverter;
+            _nameToTypeConverterBlock = nameToTypeConverterBlock;
+            _categoryNameMatcherMatcher = categoryNameMatcherMatcher;
+            _entryNameMatcherMatcher = entryNameMatcherMatcher;
         }
 
         public Func<Snapshot, Nothing> Handle
@@ -39,21 +36,21 @@ namespace Oryza.Infrastructure.DataAccess
                            {
                                foreach (var entry in category.Entries)
                                {
-                                   EntryType matchEntryType;
+                                   var entryNameMatch = _entryNameMatcherMatcher.Handle(new EntriesMatching {EntryName = entry.Name, ExistingEntryTypes = existingEntryTypes});
 
-                                   if (_entryNameMatcher.TryMatchEntryName(entry.Name, existingEntryTypes, _entryNameConverter, out matchEntryType))
+                                   if (entryNameMatch.IsMatched)
                                    {
-                                       if (!matchEntryType.NameVariants.Contains(entry.Name))
+                                       if (!entryNameMatch.Matched.NameVariants.Contains(entry.Name))
                                        {
-                                           matchEntryType.NameVariants.Add(entry.Name);
-                                           entry.Type = matchEntryType;
+                                           entryNameMatch.Matched.NameVariants.Add(entry.Name);
+                                           entry.Type = entryNameMatch.Matched;
                                        }
                                    }
                                    else
                                    {
                                        var newEntryType = new EntryType
                                                           {
-                                                              Name = _entryNameConverter.ConvertEntryName(entry.Name),
+                                                              Name = _nameToTypeConverterBlock.Handle(entry.Name),
                                                               NameVariants = new List<string> {entry.Name}
                                                           };
 
@@ -62,21 +59,21 @@ namespace Oryza.Infrastructure.DataAccess
                                    }
                                }
 
-                               CategoryType matchCategoryType;
+                               var categoryNameMatch = _categoryNameMatcherMatcher.Handle(new CategoriesMatching {CategoryName = category.Name, ExistingCategoryTypes = existingCategoryTypes});
 
-                               if (_categoryNameMatcher.TryMatchCategoryName(category.Name, existingCategoryTypes, _categoryNameConverter, out matchCategoryType))
+                               if (categoryNameMatch.IsMatched)
                                {
-                                   if (!matchCategoryType.NameVariants.Contains(category.Name))
+                                   if (!categoryNameMatch.Matched.NameVariants.Contains(category.Name))
                                    {
-                                       matchCategoryType.NameVariants.Add(category.Name);
-                                       category.Type = matchCategoryType;
+                                       categoryNameMatch.Matched.NameVariants.Add(category.Name);
+                                       category.Type = categoryNameMatch.Matched;
                                    }
                                }
                                else
                                {
                                    var newCategoryType = new CategoryType
                                                          {
-                                                             Name = _categoryNameConverter.ConvertCategoryName(category.Name),
+                                                             Name = _nameToTypeConverterBlock.Handle(category.Name),
                                                              NameVariants = new List<string> {category.Name}
                                                          };
 

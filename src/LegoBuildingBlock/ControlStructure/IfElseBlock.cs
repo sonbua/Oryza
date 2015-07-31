@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LegoBuildingBlock
+namespace LegoBuildingBlock.ControlStructure
 {
     public class IfElseBlock<TInput, TOutput> : IBlock<TInput, TOutput>
     {

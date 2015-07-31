@@ -1,9 +1,5 @@
 ﻿using System;
-using Oryza.Infrastructure.Capture;
 using Oryza.Infrastructure.Configuration;
-using Oryza.Infrastructure.DataAccess;
-using Oryza.Infrastructure.Extract;
-using Oryza.Infrastructure.Parsing;
 using Oryza.ServiceInterfaces;
 using Raven.Client;
 using Raven.Client.Document;
@@ -16,29 +12,8 @@ namespace Oryza.Composition
     {
         public static Container RegisterDependencies(this Container container)
         {
-            // Oryza.Capture
-            container.Register<IWebCapture, WebCapture>();
-
             // Oryza.Configuration
             container.RegisterSingle<IConfiguration, OryzaConfiguration>();
-
-            // Oryza.Parsing
-            container.Register<IPriceTableParser, PriceTableParser>();
-
-            // Oryza.Extract
-            var priceTableExtractorRegistration = Lifestyle.Transient.CreateRegistration<PriceTableExtractor>(container);
-
-            container.AddRegistration(typeof (IPriceTableExtractor), priceTableExtractorRegistration);
-            container.AddRegistration(typeof (IDateExtractor), priceTableExtractorRegistration);
-            container.AddRegistration(typeof (ICategoriesExtractor), priceTableExtractorRegistration);
-            container.AddRegistration(typeof (IPriceUnitExtractor), priceTableExtractorRegistration);
-            container.AddRegistration(typeof (ICategoryNameConverter), priceTableExtractorRegistration);
-            container.AddRegistration(typeof (ICategoryNameMatcher), priceTableExtractorRegistration);
-            container.AddRegistration(typeof (IEntryNameConverter), priceTableExtractorRegistration);
-            container.AddRegistration(typeof (IEntryNameMatcher), priceTableExtractorRegistration);
-
-            // Oryza.DataAccess
-            container.Register<ISnapshotRepository, SnapshotRepository>();
 
             // Packages
             container.Register<IRestClient>(() => new RestClient());

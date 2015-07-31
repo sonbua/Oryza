@@ -35,18 +35,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ICategoriesExtractor.cs" />
-    <Compile Include="ICategoryNameConverter.cs" />
-    <Compile Include="ICategoryNameMatcher.cs" />
     <Compile Include="IConfiguration.cs" />
-    <Compile Include="IDateExtractor.cs" />
-    <Compile Include="IEntryNameConverter.cs" />
-    <Compile Include="IEntryNameMatcher.cs" />
-    <Compile Include="IPriceTableExtractor.cs" />
-    <Compile Include="IPriceTableParser.cs" />
-    <Compile Include="IPriceUnitExtractor.cs" />
-    <Compile Include="ISnapshotRepository.cs" />
-    <Compile Include="IWebCapture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

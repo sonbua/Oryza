@@ -36,16 +36,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Block.cs" />
-    <Compile Include="CpuBoundTaskBlock.cs" />
+    <Compile Include="ControlStructure\CpuBoundTaskBlock.cs" />
+    <Compile Include="ControlStructure\IfElseBlock.cs" />
+    <Compile Include="ControlStructure\ResultSynchronizationBlock.cs" />
+    <Compile Include="ControlStructure\SequentialBlock.cs" />
     <Compile Include="BlockExtensions.cs" />
-    <Compile Include="IfElseBlock.cs" />
+    <Compile Include="Linq\SelectManyBlock.cs" />
+    <Compile Include="Linq\ToArrayBlock.cs" />
+    <Compile Include="Match.cs" />
     <Compile Include="NoOutputBlock.cs" />
     <Compile Include="IBlock.cs" />
     <Compile Include="Nothing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResultSynchronizationBlock.cs" />
-    <Compile Include="SequentialBlock.cs" />
+    <Compile Include="String\StringConstructorBlock.cs" />
+    <Compile Include="String\StringSplitBlock.cs" />
+    <Compile Include="String\WordCapitalizationBlock.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
