@@ -38,6 +38,7 @@
     <Compile Include="Block.cs" />
     <Compile Include="CpuBoundTaskBlock.cs" />
     <Compile Include="BlockExtensions.cs" />
+    <Compile Include="IfElseBlock.cs" />
     <Compile Include="NoOutputBlock.cs" />
     <Compile Include="IBlock.cs" />
     <Compile Include="Nothing.cs" />
