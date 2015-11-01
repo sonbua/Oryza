@@ -10,7 +10,7 @@ namespace Oryza.TestBase.Composition
 
         public TestDoublesContainerBuilder()
         {
-            _container = new Container(new ContainerOptions {AllowOverridingRegistrations = true});
+            _container = new Container {Options = {AllowOverridingRegistrations = true}};
 
             _container.RegisterDependencies();
         }

@@ -4,7 +4,6 @@ using Oryza.Entities;
 using Oryza.Infrastructure.DataAccess;
 using Oryza.TestBase;
 using Oryza.TestBase.Composition;
-using Oryza.TestBase.Xunit.Extensions;
 using Xunit;
 
 namespace Oryza.Infrastructure.Tests.DataAccess

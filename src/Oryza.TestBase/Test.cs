@@ -26,13 +26,13 @@ namespace Oryza.TestBase
 
         private static void EmbeddableDocumentStoreRegistration(Container container)
         {
-            container.RegisterSingle<IDocumentStore>(() => new DocumentStore
-                                                           {
-                                                               Url = "http://localhost:8080",
-                                                               DefaultDatabase = "oryzatest"
-                                                           }.Initialize());
+            container.RegisterSingleton<IDocumentStore>(() => new DocumentStore
+                                                              {
+                                                                  Url = "http://localhost:8080",
+                                                                  DefaultDatabase = "oryzatest"
+                                                              }.Initialize());
 
-            container.Register<IDocumentSession>(() => container.GetInstance<IDocumentStore>().OpenSession());
+            container.RegisterSingleton<IDocumentSession>(() => container.GetInstance<IDocumentStore>().OpenSession());
         }
 
         protected void TruncateDatabase()
