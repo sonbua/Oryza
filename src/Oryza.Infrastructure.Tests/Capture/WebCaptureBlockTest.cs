@@ -8,7 +8,7 @@ namespace Oryza.Infrastructure.Tests.Capture
 {
     public class WebCaptureBlockTest : Test
     {
-        [Fact]
+        [Fact(Skip = "Temporarily wait until an account is registered at oryza.com")]
         public void CaptureOryzaWebPage_HasOryzaString()
         {
             // arrange
